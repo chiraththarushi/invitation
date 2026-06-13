@@ -1,15 +1,15 @@
-/* ══════════════════════════════════════════════════════
+/* ══════════════════════════════════════════════════════════════
    CHIRATH & THARUSHI — WEDDING INVITATION
-   script.js
-   
+   script.js  (Updated)
+
    Sections:
    1. Music (Web Audio API — gentle piano melody)
    2. Envelope Open Sequence
-   3. RSVP — Google Forms integration
+   3. RSVP — WhatsApp + localStorage (NO Google Form redirect)
    4. Countdown Timer
    5. Gold Particles
    6. Scroll Reveal
-══════════════════════════════════════════════════════ */
+══════════════════════════════════════════════════════════════ */
 
 /* ══════════════════════════════════
    1. MUSIC — Gentle Piano (Web Audio)
@@ -41,7 +41,6 @@ function playNote(freq, dur, delay, vel=0.05) {
   gainNode.gain.exponentialRampToValueAtTime(0.001, t + dur);
   osc.start(t); osc.stop(t + dur + 0.05);
 
-  // Soft overtone for warmth
   const osc2 = audioCtx.createOscillator();
   const g2 = audioCtx.createGain();
   osc2.connect(g2); g2.connect(audioCtx.destination);
@@ -95,18 +94,13 @@ function openEnvelope() {
   const card     = document.getElementById('card-preview');
   const hint     = document.getElementById('tap-hint');
 
-  // Step 1 — Seal glow
   envelope.classList.add('glowing');
   hint.style.transition = 'opacity 0.4s';
   hint.style.opacity = '0';
 
-  // Step 2 — Card peeks out
   setTimeout(() => { card.classList.add('sliding'); }, 450);
-
-  // Step 3 — Envelope flies up and disappears
   setTimeout(() => { envelope.classList.add('opening'); }, 900);
 
-  // Step 4 — Main invitation fades in
   setTimeout(() => {
     document.getElementById('opening-screen').classList.add('hide');
     const main = document.getElementById('main-content');
@@ -114,146 +108,156 @@ function openEnvelope() {
     document.getElementById('particles-canvas').classList.add('visible');
     musicBtn.classList.add('visible');
 
-    // Auto-start music after user tap (browser allows this)
     initAudio();
     musicPlaying = true;
     if(audioCtx.state === 'suspended') audioCtx.resume();
     playChunk();
     musicInterval = setInterval(playChunk, 2600);
 
-    // Start scroll reveal
     initReveal();
   }, 2800);
 }
 
-/* ══════════════════════════════════
-   3. RSVP — Google Forms Integration
-   
-   How it works:
-   • Guest fills in the custom form fields
-   • On submit, values are mapped to Google Form field entry IDs
-   • A hidden iframe posts to Google Forms silently
-   • Guest sees the in-page success message
-   
-   ⚠ SETUP REQUIRED — see comments below
-══════════════════════════════════ */
+/* ══════════════════════════════════════════════════════════════
+   3. RSVP SYSTEM — WhatsApp + localStorage
 
-/*
-  HOW TO FIND YOUR GOOGLE FORM ENTRY IDs:
-  ─────────────────────────────────────────
-  1. Open your Google Form in a browser
-  2. Right-click → View Page Source (Ctrl+U)
-  3. Press Ctrl+F and search for "entry."
-  4. You will see entries like:
-       entry.123456789   ← this is the field ID
-  5. Match each field to its label (Name, Guests, etc.)
-  6. Replace the ENTRY_IDs below with your actual values
-  
-  YOUR FORM:
-  https://docs.google.com/forms/d/e/1FAIpQLSfS9hkPt5_3uz0sv78GldZ-WAVv-LtjAsh2kI3VCZ_REWQ84g/viewform
+   HOW THIS WORKS:
+   ───────────────────────────────────────────────────────────────
+   • When a guest submits the RSVP form, their response is:
+     1. Saved to their browser's localStorage (permanent record)
+     2. Sent directly to the couple via WhatsApp with one tap
+        (WhatsApp opens with a pre-filled message — the couple
+        receives it instantly on their phone)
 
-  FORM ACTION URL (for hidden iframe post):
-  https://docs.google.com/forms/d/e/1FAIpQLSfS9hkPt5_3uz0sv78GldZ-WAVv-LtjAsh2kI3VCZ_REWQ84g/formResponse
-*/
+   • The guest sees a beautiful thank-you message immediately
+     after submitting — NO redirects, NO confusion.
 
-const GOOGLE_FORM_ACTION = 'https://docs.google.com/forms/d/e/1FAIpQLSfS9hkPt5_3uz0sv78GldZ-WAVv-LtjAsh2kI3VCZ_REWQ84g/formResponse';
+   • The couple receives a clear WhatsApp message like:
+       ✦ RSVP — Chirath & Tharushi Wedding ✦
+       Name: Perera Family
+       Guests: 4
+       Attendance: Joyfully Accept
+       Message: We are so happy for you both! ♡
 
-// ⬇ REPLACE these with your actual entry IDs from the form source
-const FORM_FIELDS = {
-  name:       'entry.XXXXXXXXX',   // ← Your Name field entry ID
-  guests:     'entry.XXXXXXXXX',   // ← Number of Guests entry ID
-  attendance: 'entry.XXXXXXXXX',   // ← Attendance entry ID (Yes/No)
-  message:    'entry.XXXXXXXXX',   // ← Message entry ID
-};
+   TO CONFIGURE:
+   ─────────────
+   Replace the phone number below with the couple's WhatsApp
+   number in international format (no + sign, no spaces):
+     Sri Lanka example: 94752838185
+     (94 = country code, then the number without leading 0)
+══════════════════════════════════════════════════════════════ */
+
+// ⬇ CHANGE THIS to the WhatsApp number that should receive RSVPs
+// Format: country code + number (no spaces, no + sign)
+// Sri Lanka: 94 + number without leading zero
+const WHATSAPP_NUMBER = '94752838185'; // Chirath's number
 
 let attendanceVal = '';
 
 function selectAttendance(val) {
   attendanceVal = val;
   document.getElementById('att-yes').classList.toggle('selected', val === 'yes');
-  document.getElementById('att-no').classList.toggle('selected', val === 'no');
+  document.getElementById('att-no').classList.toggle('selected',  val === 'no');
+}
+
+function saveResponseToStorage(data) {
+  try {
+    const existing = JSON.parse(localStorage.getItem('ct_rsvp_responses') || '[]');
+    existing.push({ ...data, submittedAt: new Date().toISOString() });
+    localStorage.setItem('ct_rsvp_responses', JSON.stringify(existing));
+  } catch(e) {
+    // Storage not available — silent fail, WhatsApp still works
+  }
 }
 
 function submitRSVP() {
   const name    = document.getElementById('rsvp-name').value.trim();
-  const guests  = document.getElementById('rsvp-guests').value.trim();
+  const guests  = document.getElementById('rsvp-guests').value.trim() || '1';
   const message = document.getElementById('rsvp-message').value.trim();
 
-  // Validation
+  // ── Validation ──
   if(!name) {
-    alert('Please enter your name.');
+    shakeField('rsvp-name');
     return;
   }
   if(!attendanceVal) {
-    alert('Please confirm your attendance.');
+    // Flash the attendance buttons
+    const group = document.querySelector('.attendance-group');
+    group.style.outline = '1.5px solid rgba(200,169,107,0.7)';
+    group.style.borderRadius = '5px';
+    setTimeout(() => { group.style.outline = 'none'; }, 1600);
     return;
   }
 
-  // Build form data
-  const attendanceText = attendanceVal === 'yes' ? 'Joyfully Accept' : 'Regretfully Decline';
+  const attendanceText = attendanceVal === 'yes' ? 'Joyfully Accept ✓' : 'Regretfully Decline';
 
-  // Check if entry IDs are configured
-  const fieldsConfigured = !FORM_FIELDS.name.includes('XXXXXXXXX');
+  // ── 1. Save to localStorage ──
+  saveResponseToStorage({ name, guests, attendance: attendanceText, message });
 
-  if(fieldsConfigured) {
-    // ── Silent iframe submission to Google Forms ──
-    const params = new URLSearchParams();
-    params.append(FORM_FIELDS.name,       name);
-    params.append(FORM_FIELDS.guests,     guests || '1');
-    params.append(FORM_FIELDS.attendance, attendanceText);
-    params.append(FORM_FIELDS.message,    message);
+  // ── 2. Send via WhatsApp ──
+  const waMessage =
+    `✦ RSVP — Chirath & Tharushi Wedding ✦\n\n` +
+    `Name: ${name}\n` +
+    `Number of Guests: ${guests}\n` +
+    `Attendance: ${attendanceText}\n` +
+    (message ? `Message: ${message}\n` : '') +
+    `\nSent from the wedding invitation website.`;
 
-    // Create a hidden iframe to post form data silently
-    const iframe = document.createElement('iframe');
-    iframe.setAttribute('name', 'hidden-form-target');
-    iframe.style.display = 'none';
-    document.body.appendChild(iframe);
+  const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(waMessage)}`;
 
-    const form = document.createElement('form');
-    form.method = 'POST';
-    form.action = GOOGLE_FORM_ACTION;
-    form.target = 'hidden-form-target';
-    form.style.display = 'none';
-
-    Object.entries({
-      [FORM_FIELDS.name]:       name,
-      [FORM_FIELDS.guests]:     guests || '1',
-      [FORM_FIELDS.attendance]: attendanceText,
-      [FORM_FIELDS.message]:    message,
-    }).forEach(([key, value]) => {
-      const input = document.createElement('input');
-      input.type  = 'hidden';
-      input.name  = key;
-      input.value = value;
-      form.appendChild(input);
-    });
-
-    document.body.appendChild(form);
-    form.submit();
-
-    // Clean up after submission
-    setTimeout(() => {
-      document.body.removeChild(form);
-      document.body.removeChild(iframe);
-    }, 5000);
-
-  } else {
-    // ── Fallback: open Google Form in new tab if entry IDs not yet set ──
-    // This always works and stores responses correctly
-    const formUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSfS9hkPt5_3uz0sv78GldZ-WAVv-LtjAsh2kI3VCZ_REWQ84g/viewform';
-    window.open(formUrl, '_blank');
-  }
-
-  // Show in-page success message
+  // Show success message first, then open WhatsApp
   document.getElementById('rsvp-form').style.display = 'none';
   document.getElementById('rsvp-success').classList.add('show');
+
+  // Small delay so the guest sees the thank you before WhatsApp opens
+  setTimeout(() => {
+    window.open(waUrl, '_blank');
+  }, 800);
 }
+
+// Gentle field shake on validation fail
+function shakeField(id) {
+  const el = document.getElementById(id);
+  el.style.transition = 'transform 0.1s ease, border-color 0.3s';
+  el.style.borderColor = 'rgba(200,169,107,0.9)';
+  el.style.transform = 'translateX(-4px)';
+  setTimeout(() => { el.style.transform = 'translateX(4px)'; }, 100);
+  setTimeout(() => { el.style.transform = 'translateX(-3px)'; }, 200);
+  setTimeout(() => { el.style.transform = 'translateX(3px)'; }, 300);
+  setTimeout(() => { el.style.transform = 'translateX(0)'; el.focus(); }, 400);
+  setTimeout(() => { el.style.borderColor = ''; }, 1500);
+}
+
+/*
+  ────────────────────────────────────────────────────────────
+  TO VIEW ALL SAVED RESPONSES (couple only):
+  ────────────────────────────────────────────────────────────
+  Open the website in a browser, press F12 (Developer Tools),
+  go to the Console tab, and type:
+
+      showRSVPResponses()
+
+  This will display a table of everyone who RSVP'd from
+  that device/browser. For a full list, check your WhatsApp.
+  ────────────────────────────────────────────────────────────
+*/
+window.showRSVPResponses = function() {
+  try {
+    const data = JSON.parse(localStorage.getItem('ct_rsvp_responses') || '[]');
+    if(data.length === 0) {
+      console.log('No RSVP responses saved in this browser yet.');
+      return;
+    }
+    console.log(`%c✦ Chirath & Tharushi — RSVP Responses (${data.length} total) ✦`, 'color:#C8A96B;font-size:14px;font-weight:bold;');
+    console.table(data);
+  } catch(e) {
+    console.log('Could not read responses.');
+  }
+};
 
 /* ══════════════════════════════════
    4. COUNTDOWN TIMER
    Target: 23 July 2026 at 10:00 AM
-   Updates every second automatically
-   for every guest on any device.
 ══════════════════════════════════ */
 function updateCountdown() {
   const wedding = new Date('2026-07-23T10:00:00');
