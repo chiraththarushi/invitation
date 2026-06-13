@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Chirath &amp; Tharushi — Wedding Invitation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,600&family=Cinzel:wght@400;500;600&family=Great+Vibes&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<canvas id="particles-canvas"></canvas>
+<button id="music-btn" title="Toggle Music" onclick="toggleMusic()">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C8A96B" stroke-width="1.8">
+    <path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/>
+  </svg>
+</button>
+
+<!-- ═══════════════ OPENING SCREEN ═══════════════ -->
+<div id="opening-screen">
+  <div class="opening-inner">
+    <div class="envelope-wrap">
+      <div class="envelope-img-wrap" id="envelope" onclick="openEnvelope()">
+        <!-- Peeking card behind envelope -->
+        <div class="card-peek" id="card-preview">
+          <span class="peek-name">Chirath &amp; Tharushi</span>
+          <span class="peek-date">23 · July · 2026</span>
+        </div>
+        <!-- The luxury envelope image — replace with your actual file -->
+        <img class="envelope-img" src="envelope.jpeg" alt="Luxury Wedding Invitation Envelope" id="envelope-img">
+      </div>
+      <p class="tap-hint" id="tap-hint">✦ &nbsp;Tap to Open&nbsp; ✦</p>
+      <p class="opening-tagline">Two souls, one heart —<br>a love story written in the stars</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ MAIN CONTENT ═══════════════ -->
+<div id="main-content">
+
+  <!-- ── HERO ── -->
+  <div class="hero">
+    <!-- Floral watermarks — replace src with your actual floral PNG files -->
+    <img class="hero-floral-top" src="floral1.png" alt="" aria-hidden="true">
+    <img class="hero-floral-bot" src="floral2.png" alt="" aria-hidden="true">
+
+    <!-- Monogram / Crest — replace src with your crest image file -->
+    <div class="hero-monogram reveal">
+      <img src="crest.png" alt="Chirath and Tharushi Monogram Crest" class="monogram-img">
+    </div>
+
+    <span class="hero-eyebrow reveal">— Wedding Invitation —</span>
+
+    <div class="hero-names-block reveal reveal-delay-1">
+      <span class="hero-name-line">Chirath</span>
+      <span class="hero-amp">&amp;</span>
+      <span class="hero-name-line">Tharushi</span>
+    </div>
+
+    <div class="gold-divider reveal reveal-delay-2">
+      <svg width="14" height="14" viewBox="0 0 14 14"><path d="M7 0l1.8 5.2H14l-4.3 3.1 1.6 5.2L7 10.5l-4.3 3 1.6-5.2L0 5.2h5.2z" fill="#C8A96B"/></svg>
+    </div>
+
+    <p class="hero-love-quote reveal reveal-delay-2">
+      Two souls, one heart — a love story written in the stars,<br>celebrated with you.
+    </p>
+
+    <div class="invitation-formal reveal reveal-delay-3">
+      <p class="inv-parents">Mr. &amp; Mrs. Ranaweera</p>
+      <p class="inv-together">Together With</p>
+      <p class="inv-parents">Mr. &amp; Mrs. Delgoda Arachchi</p>
+      <br>
+      <p class="inv-request">Request the honour of your presence<br>on the occasion of the marriage of their daughter &amp; son</p>
+      <br>
+      <p class="inv-couple-names">Tharushi &amp; Chirath</p>
+    </div>
+  </div>
+
+  <!-- ── WEDDING DETAILS ── -->
+  <section id="details">
+    <span class="section-eyebrow reveal">✦ &nbsp;The Celebration&nbsp; ✦</span>
+    <h2 class="section-title reveal">Wedding Details</h2>
+    <div class="gold-divider reveal"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M7 0l1.8 5.2H14l-4.3 3.1 1.6 5.2L7 10.5l-4.3 3 1.6-5.2L0 5.2h5.2z" fill="#C8A96B"/></svg></div>
+
+    <div class="details-grid">
+      <div class="details-card reveal">
+        <svg class="card-icon-svg" viewBox="0 0 28 28" fill="none">
+          <rect x="3" y="5" width="22" height="20" rx="3" stroke="#C8A96B" stroke-width="1.2" fill="none"/>
+          <line x1="3" y1="11" x2="25" y2="11" stroke="#C8A96B" stroke-width="1" opacity="0.5"/>
+          <line x1="9" y1="3" x2="9" y2="8" stroke="#C8A96B" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="19" y1="3" x2="19" y2="8" stroke="#C8A96B" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="14" cy="19" r="2.5" fill="#C8A96B" opacity="0.7"/>
+        </svg>
+        <span class="card-label">Date</span>
+        <div class="card-value">23 July 2026</div>
+        <div class="card-sub">Thursday</div>
+      </div>
+
+      <div class="details-card reveal reveal-delay-1">
+        <svg class="card-icon-svg" viewBox="0 0 28 28" fill="none">
+          <circle cx="14" cy="14" r="11" stroke="#C8A96B" stroke-width="1.2" fill="none"/>
+          <line x1="14" y1="7" x2="14" y2="14" stroke="#C8A96B" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="14" y1="14" x2="19" y2="17" stroke="#C8A96B" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="14" cy="14" r="1.5" fill="#C8A96B"/>
+        </svg>
+        <span class="card-label">Poruwa Ceremony</span>
+        <div class="card-value">10:00 AM</div>
+        <div class="card-sub">Please arrive early</div>
+      </div>
+
+      <div class="details-card full reveal reveal-delay-2">
+        <svg class="card-icon-svg" viewBox="0 0 28 28" fill="none">
+          <path d="M14 3C9.6 3 6 6.6 6 11c0 6.5 8 14 8 14s8-7.5 8-14c0-4.4-3.6-8-8-8z" stroke="#C8A96B" stroke-width="1.2" fill="none"/>
+          <circle cx="14" cy="11" r="3" stroke="#C8A96B" stroke-width="1" fill="rgba(200,169,107,0.2)"/>
+        </svg>
+        <span class="card-label">Venue</span>
+        <div class="card-value">Sawingir Hills</div>
+        <div class="card-sub">Magnolia Hall · Thalagala, Gonapala</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── COUNTDOWN ── -->
+  <div id="countdown-section">
+    <div class="countdown-bg"></div>
+    <!-- Replace src with your clock/countdown background image -->
+    <div class="countdown-bg-img"></div>
+    <div class="countdown-inner">
+      <span class="section-eyebrow reveal">✦ &nbsp;Days Until Forever&nbsp; ✦</span>
+      <h2 class="section-title reveal">Counting Down to Our Special Day</h2>
+      <div class="gold-divider reveal"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M7 0l1.8 5.2H14l-4.3 3.1 1.6 5.2L7 10.5l-4.3 3 1.6-5.2L0 5.2h5.2z" fill="#C8A96B"/></svg></div>
+      <p class="countdown-romantic reveal">Every second that passes brings us closer to forever.<br>We cannot wait to celebrate with you.</p>
+      <div class="countdown-grid reveal reveal-delay-1">
+        <div class="countdown-unit">
+          <span class="countdown-number" id="cd-days">000</span>
+          <span class="countdown-label">Days</span>
+        </div>
+        <span class="countdown-sep">:</span>
+        <div class="countdown-unit">
+          <span class="countdown-number" id="cd-hours">00</span>
+          <span class="countdown-label">Hours</span>
+        </div>
+        <span class="countdown-sep">:</span>
+        <div class="countdown-unit">
+          <span class="countdown-number" id="cd-mins">00</span>
+          <span class="countdown-label">Minutes</span>
+        </div>
+        <span class="countdown-sep">:</span>
+        <div class="countdown-unit">
+          <span class="countdown-number" id="cd-secs">00</span>
+          <span class="countdown-label">Seconds</span>
+        </div>
+      </div>
+      <span class="countdown-tagline reveal reveal-delay-2">Until We Say "I Do"</span>
+    </div>
+  </div>
+
+  <!-- ── VENUE / DIRECTIONS ── -->
+  <section id="venue">
+    <span class="section-eyebrow reveal">✦ &nbsp;Find Us&nbsp; ✦</span>
+    <h2 class="section-title reveal">Venue &amp; Directions</h2>
+    <div class="gold-divider reveal"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M7 0l1.8 5.2H14l-4.3 3.1 1.6 5.2L7 10.5l-4.3 3 1.6-5.2L0 5.2h5.2z" fill="#C8A96B"/></svg></div>
+
+    <!-- Venue image — replace src with your actual venue photo -->
+    <div class="venue-img-wrap reveal reveal-delay-1">
+      <img src="venue.jpeg" alt="Sawingir Hills Magnolia Hall" class="venue-img">
+    </div>
+
+    <div class="reveal reveal-delay-1">
+      <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(18px,5vw,22px);color:var(--charcoal-light);font-style:italic;margin:22px 0 5px">Sawingir Hills — Magnolia Hall</p>
+      <p style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:6px">Thalagala, Gonapala</p>
+      <a href="https://maps.app.goo.gl/mrgZQBJW6bUSeLLA6" target="_blank" rel="noopener" class="venue-btn">
+        <svg width="14" height="14" viewBox="0 0 28 28" fill="none"><path d="M14 3C9.6 3 6 6.6 6 11c0 6.5 8 14 8 14s8-7.5 8-14c0-4.4-3.6-8-8-8z" stroke="white" stroke-width="1.5" fill="none"/><circle cx="14" cy="11" r="2.5" fill="white" opacity="0.8"/></svg>
+        Get Directions
+      </a>
+    </div>
+  </section>
+
+  <!-- ── RSVP ── -->
+  <section id="rsvp" class="rsvp-section">
+    <div class="rsvp-inner">
+      <span class="section-eyebrow reveal">✦ &nbsp;RSVP&nbsp; ✦</span>
+      <h2 class="section-title reveal">Kindly Reply</h2>
+      <div class="gold-divider reveal"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M7 0l1.8 5.2H14l-4.3 3.1 1.6 5.2L7 10.5l-4.3 3 1.6-5.2L0 5.2h5.2z" fill="#C8A96B"/></svg></div>
+      <p class="reveal" style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(15px,4vw,18px);color:var(--charcoal-light);margin-top:8px;text-align:center;line-height:1.7;">
+        Please let us know you will be joining us on our special day
+      </p>
+
+      <div class="rsvp-card-wrap reveal reveal-delay-1">
+
+        <div id="rsvp-form">
+          <span class="rsvp-deadline">
+            <svg width="12" height="12" viewBox="0 0 28 28" fill="none" style="vertical-align:middle;margin-right:6px;"><circle cx="14" cy="14" r="11" stroke="#A67C37" stroke-width="1.2"/><line x1="14" y1="7" x2="14" y2="14" stroke="#A67C37" stroke-width="1.5" stroke-linecap="round"/><line x1="14" y1="14" x2="19" y2="17" stroke="#A67C37" stroke-width="1.5" stroke-linecap="round"/></svg>
+            Kindly respond by 10 July 2026
+          </span>
+
+          <div class="form-group">
+            <label class="form-label" for="rsvp-name">Your Full Name</label>
+            <input type="text" class="form-input" id="rsvp-name" placeholder="Enter your name" autocomplete="name">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="rsvp-guests">Number of Guests</label>
+            <input type="number" class="form-input" id="rsvp-guests" placeholder="1" min="1" max="10" inputmode="numeric">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Will You Attend?</label>
+            <div class="attendance-group">
+              <button type="button" class="att-btn" id="att-yes" onclick="selectAttendance('yes')">Joyfully Accept</button>
+              <button type="button" class="att-btn" id="att-no" onclick="selectAttendance('no')">Regretfully Decline</button>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="rsvp-message">Message to the Couple (Optional)</label>
+            <textarea class="form-textarea" id="rsvp-message" placeholder="Leave your warm wishes here..."></textarea>
+          </div>
+          <button type="button" class="submit-btn" onclick="submitRSVP()">Confirm Attendance</button>
+
+          <p class="rsvp-honor-text">
+            We are honoured to celebrate this special day with you.<br>
+            So we may prepare for your arrival,<br>we kindly ask you to respond at your earliest convenience.
+          </p>
+        </div>
+
+        <div class="rsvp-success" id="rsvp-success">
+          <span class="checkmark">✨</span>
+          <h3>Thank You</h3>
+          <p>Your response has been received with joy.<br>We look forward to celebrating with you.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTACT ── -->
+  <section id="contact">
+    <span class="section-eyebrow reveal">✦ &nbsp;Contact&nbsp; ✦</span>
+    <h2 class="section-title reveal">Reach Out to Us</h2>
+    <div class="gold-divider reveal"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M7 0l1.8 5.2H14l-4.3 3.1 1.6 5.2L7 10.5l-4.3 3 1.6-5.2L0 5.2h5.2z" fill="#C8A96B"/></svg></div>
+
+    <div class="contact-cards">
+      <div class="contact-card reveal">
+        <span class="contact-role">The Groom</span>
+        <span class="contact-name">Chirath</span>
+        <a href="tel:0752838185" class="contact-phone">075 283 8185</a>
+      </div>
+      <div class="contact-card reveal reveal-delay-1">
+        <span class="contact-role">The Bride</span>
+        <span class="contact-name">Tharushi</span>
+        <a href="tel:0710690395" class="contact-phone">071 069 0395</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── HASHTAG ── -->
+  <div class="hashtag-section">
+    <!-- Replace src with your floral/roses image -->
+    <img class="hashtag-floral" src="floral1.png" alt="" aria-hidden="true">
+    <div class="hashtag-inner">
+      <div class="gold-divider reveal"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M7 0l1.8 5.2H14l-4.3 3.1 1.6 5.2L7 10.5l-4.3 3 1.6-5.2L0 5.2h5.2z" fill="#C8A96B"/></svg></div>
+      <span class="section-eyebrow reveal">Share Your Memories</span>
+      <span class="hashtag-tag reveal reveal-delay-1">#ChirathAndTharushi2026</span>
+      <span class="hashtag-text reveal reveal-delay-2">Tag your photos with our hashtag to be part of our story</span>
+      <div class="gold-divider reveal reveal-delay-3"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M7 0l1.8 5.2H14l-4.3 3.1 1.6 5.2L7 10.5l-4.3 3 1.6-5.2L0 5.2h5.2z" fill="#C8A96B"/></svg></div>
+    </div>
+  </div>
+
+  <!-- ── THANK YOU ── -->
+  <div class="thankyou-section">
+    <span class="section-eyebrow reveal">✦ &nbsp;With Love&nbsp; ✦</span>
+    <h2 class="section-title reveal" style="font-size:clamp(48px,13vw,80px);font-weight:300;">Thank You</h2>
+    <div class="gold-divider reveal"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M7 0l1.8 5.2H14l-4.3 3.1 1.6 5.2L7 10.5l-4.3 3 1.6-5.2L0 5.2h5.2z" fill="#C8A96B"/></svg></div>
+    <p class="thankyou-quote reveal">
+      We are honoured to celebrate this special day with you.<br>
+      Thank you for being part of our journey.<br>
+      We look forward to creating unforgettable memories together.
+    </p>
+    <span class="thankyou-heart reveal reveal-delay-1">&#9825;</span>
+    <p class="thankyou-honor reveal reveal-delay-1">
+      Your presence is the greatest gift we could ever ask for.
+    </p>
+    <span class="thankyou-sig reveal reveal-delay-2">Chirath &amp; Tharushi</span>
+    <div class="gold-divider reveal reveal-delay-3"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M7 0l1.8 5.2H14l-4.3 3.1 1.6 5.2L7 10.5l-4.3 3 1.6-5.2L0 5.2h5.2z" fill="#C8A96B"/></svg></div>
+    <span class="footer-meta reveal reveal-delay-3">Chirath &amp; Tharushi &nbsp;·&nbsp; 23 July 2026 &nbsp;·&nbsp; Sawingir Hills, Sri Lanka</span>
+  </div>
+
+</div><!-- /main-content -->
+
+<script src="script.js"></script>
+</body>
+</html>
