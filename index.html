@@ -21,14 +21,42 @@
 <div id="opening-screen">
   <div class="opening-inner">
     <div class="envelope-wrap">
-      <div class="envelope-img-wrap" id="envelope" onclick="openEnvelope()">
+      <div class="envelope-img-wrap" id="envelope">
         <div class="card-peek" id="card-preview">
           <span class="peek-name">Chirath &amp; Tharushi</span>
           <span class="peek-date">23 · July · 2026</span>
         </div>
         <img class="envelope-img" src="envelope.jpeg" alt="Luxury Wedding Invitation Envelope" id="envelope-img">
+
+        <!-- Wax Seal — tap this to open -->
+        <div class="wax-seal" id="wax-seal" onclick="openEnvelope()">
+          <div class="wax-seal-body">
+            <!-- Outer decorative ring -->
+            <svg class="wax-seal-ring-svg" viewBox="0 0 110 110">
+              <circle cx="55" cy="55" r="50" fill="none" stroke="rgba(255,220,120,0.35)" stroke-width="0.8"/>
+              <circle cx="55" cy="55" r="44" fill="none" stroke="rgba(255,220,120,0.2)" stroke-width="0.5"/>
+              <!-- Arc text -->
+              <path id="arc-top" d="M 55,55 m -36,0 a 36,36 0 1,1 72,0" fill="none"/>
+              <path id="arc-bot" d="M 55,55 m -36,0 a 36,36 0 0,0 72,0" fill="none"/>
+              <text font-family="Cinzel, serif" font-size="7" fill="rgba(255,230,150,0.75)" letter-spacing="2">
+                <textPath href="#arc-top" startOffset="8%">CHIRATH &amp; THARUSHI</textPath>
+              </text>
+              <text font-family="Cinzel, serif" font-size="7" fill="rgba(255,230,150,0.6)" letter-spacing="3">
+                <textPath href="#arc-bot" startOffset="18%">✦ 23 · JULY · 2026 ✦</textPath>
+              </text>
+            </svg>
+            <!-- Monogram -->
+            <div class="wax-seal-monogram">C&amp;T</div>
+            <!-- Tap label inside seal -->
+            <div class="wax-seal-tap">Tap to Open</div>
+          </div>
+          <!-- Glow ring shown on hover/pulse -->
+          <div class="wax-seal-glow"></div>
+        </div>
+
       </div>
-      <p class="tap-hint" id="tap-hint">✦ &nbsp;Tap to Open&nbsp; ✦</p>
+      <!-- Hide the old text hint since seal replaces it -->
+      <p class="tap-hint" id="tap-hint" style="opacity:0;pointer-events:none;height:0;margin:0;"></p>
       <p class="opening-tagline">Two souls, one heart —<br>a love story written in the stars</p>
     </div>
   </div>
