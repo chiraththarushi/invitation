@@ -93,8 +93,11 @@ function openEnvelope() {
   const envelope = document.getElementById('envelope');
   const card     = document.getElementById('card-preview');
   const hint     = document.getElementById('tap-hint');
+  const seal     = document.getElementById('wax-seal');
 
+  // Step 1 — seal glows, disable further taps
   envelope.classList.add('glowing');
+  if(seal) seal.style.pointerEvents = 'none';
   hint.style.transition = 'opacity 0.4s';
   hint.style.opacity = '0';
 
