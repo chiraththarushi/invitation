@@ -980,3 +980,168 @@ section {
 .monogram-img[src="crest.png"] {
   /* if you have the file, it shows; if not, onerror hides it */
 }
+
+
+/* ════════════════════════════════════════════════════════════════
+   WAX SEAL — Tap to Open
+   ════════════════════════════════════════════════════════════════ */
+
+.wax-seal {
+  position: absolute;
+  /* Sits centered on the bottom flap of the envelope */
+  bottom: -28px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  cursor: pointer;
+  width: 96px;
+  height: 96px;
+}
+
+/* Pulsing glow ring behind the seal */
+.wax-seal-glow {
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(200,169,107,0.35) 0%, transparent 70%);
+  animation: sealPulse 2.4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes sealPulse {
+  0%, 100% { opacity: 0.5; transform: scale(0.92); }
+  50%       { opacity: 1;   transform: scale(1.08); }
+}
+
+/* The seal disc itself */
+.wax-seal-body {
+  position: relative;
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+
+  /* Rich deep red wax — authentic wax seal colour */
+  background: radial-gradient(circle at 36% 34%,
+    #c0392b 0%,
+    #962d22 38%,
+    #7a2018 65%,
+    #5c1610 100%
+  );
+
+  box-shadow:
+    0 0 0 2px rgba(200,169,107,0.55),
+    0 0 0 4px rgba(200,169,107,0.18),
+    0 8px 28px rgba(90,20,10,0.55),
+    0 3px 10px rgba(0,0,0,0.35),
+    inset 0 2px 6px rgba(255,160,120,0.2),
+    inset 0 -3px 8px rgba(0,0,0,0.4);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  overflow: hidden;
+}
+
+/* Wax texture — subtle highlight blob */
+.wax-seal-body::before {
+  content: '';
+  position: absolute;
+  top: 12px; left: 16px;
+  width: 30px; height: 20px;
+  background: radial-gradient(ellipse, rgba(255,180,150,0.18) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* Slight irregular wax edge */
+.wax-seal-body::after {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 70% 75%,
+    rgba(80,12,8,0.5) 0%, transparent 55%);
+  pointer-events: none;
+}
+
+.wax-seal:hover .wax-seal-body {
+  transform: scale(1.06);
+  box-shadow:
+    0 0 0 2px rgba(200,169,107,0.8),
+    0 0 0 6px rgba(200,169,107,0.25),
+    0 0 22px rgba(200,169,107,0.4),
+    0 10px 32px rgba(90,20,10,0.6),
+    inset 0 2px 6px rgba(255,160,120,0.25),
+    inset 0 -3px 8px rgba(0,0,0,0.4);
+}
+
+.wax-seal:active .wax-seal-body {
+  transform: scale(0.97);
+}
+
+/* Arc text SVG */
+.wax-seal-ring-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* C&T monogram */
+.wax-seal-monogram {
+  font-family: 'Great Vibes', cursive;
+  font-size: 22px;
+  color: rgba(255, 235, 170, 0.92);
+  text-shadow:
+    0 1px 3px rgba(0,0,0,0.5),
+    0 0 8px rgba(255,200,100,0.2);
+  position: relative;
+  z-index: 2;
+  margin-top: -4px;
+  line-height: 1;
+  letter-spacing: 1px;
+}
+
+/* "Tap to Open" micro label */
+.wax-seal-tap {
+  font-family: 'Cinzel', serif;
+  font-size: 5.5px;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: rgba(255, 225, 150, 0.65);
+  position: relative;
+  z-index: 2;
+  margin-top: 5px;
+  animation: tapTextPulse 2.4s ease-in-out infinite;
+}
+
+@keyframes tapTextPulse {
+  0%, 100% { opacity: 0.55; }
+  50%       { opacity: 1; }
+}
+
+/* When envelope opens — seal fades and scales away */
+.envelope-img-wrap.glowing .wax-seal-body {
+  animation: sealGlowBurst 0.7s ease forwards;
+}
+.envelope-img-wrap.opening .wax-seal {
+  animation: sealFadeOut 0.5s ease forwards;
+}
+
+@keyframes sealGlowBurst {
+  0%   { box-shadow: 0 0 0 2px rgba(200,169,107,0.55), 0 8px 28px rgba(90,20,10,0.55); }
+  40%  { box-shadow: 0 0 0 4px rgba(200,169,107,1), 0 0 40px rgba(200,169,107,0.8), 0 12px 36px rgba(90,20,10,0.6); }
+  100% { box-shadow: 0 0 0 2px rgba(200,169,107,0.55), 0 8px 28px rgba(90,20,10,0.55); }
+}
+
+@keyframes sealFadeOut {
+  0%   { opacity: 1; transform: translateX(-50%) scale(1); }
+  100% { opacity: 0; transform: translateX(-50%) scale(0.6); }
+}
+
+/* Make sure envelope wrap has enough bottom padding to show seal */
+.envelope-img-wrap {
+  margin-bottom: 28px !important;
+}
