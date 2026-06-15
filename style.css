@@ -514,7 +514,7 @@ section {
 .countdown-bg-img {
   position:absolute; inset:0; z-index:0;
   background:url('clock.jpeg') center/cover no-repeat;
-  opacity:0.1; filter:blur(3px);
+  opacity:0.06; filter:blur(3px);
 }
 .countdown-inner { position:relative; z-index:1; }
 .countdown-romantic {
@@ -531,7 +531,7 @@ section {
 }
 .countdown-unit::before {
   content:''; position:absolute; inset:0;
-  background:linear-gradient(135deg,rgba(200,169,107,0.04) 0%,transparent 60%);
+  background:linear-gradient(135deg,rgba(200,169,107,0.04) 0%,transparent 30%);
 }
 .countdown-number {
   font-family:'Cinzel',serif; font-size:clamp(28px,7vw,44px); font-weight:600;
