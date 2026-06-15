@@ -510,11 +510,11 @@ section {
   border-top:1px solid rgba(200,169,107,0.14);
   border-bottom:1px solid rgba(200,169,107,0.14);
 }
-.countdown-bg { position:absolute; inset:0; background:var(--soft-white); z-index:0; }
+.countdown-bg { position:absolute; inset:0; background: rgba(255,255,255,0.5); z-index:0; }
 .countdown-bg-img {
   position:absolute; inset:0; z-index:0;
   background:url('clock.jpeg') center/cover no-repeat;
-  opacity:0.06; filter:blur(3px);
+  opacity:0.2; filter:blur(1px);
 }
 .countdown-inner { position:relative; z-index:1; }
 .countdown-romantic {
@@ -525,7 +525,7 @@ section {
   display:flex; justify-content:center; gap:12px; margin-top:38px; flex-wrap:wrap;
 }
 .countdown-unit {
-  background:var(--white); border:1px solid rgba(200,169,107,0.38);
+  background: rgba(255,255,255,0.78); border:1px solid rgba(200,169,107,0.38);
   border-radius:10px; padding:22px 16px; min-width:72px; text-align:center;
   box-shadow:0 4px 20px rgba(200,169,107,0.1); position:relative; overflow:hidden;
 }
