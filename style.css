@@ -314,7 +314,7 @@ body {
 
 /* Slightly bigger eyebrow variant (used on key sections) */
 .section-eyebrow-lg {
-  font-size:clamp(19px,2.8vw,13px);
+  font-size:clamp(15px,2.8vw,13px);
   letter-spacing:4px;
 }
 
@@ -327,7 +327,7 @@ body {
 .hero-names-block { margin-bottom:4px; }
 .hero-name-line {
   font-family:'Cormorant Garamond',serif; font-weight:300;
-  font-size:clamp(58px,17vw,108px); color:var(--charcoal);
+  font-size:clamp(40px,17vw,108px); color:var(--charcoal);
   line-height:0.95; letter-spacing:-1px; display:block;
   background:linear-gradient(160deg,#2B2B2B 0%,#4a3a28 45%,var(--gold-deep) 70%,#2B2B2B 100%);
   -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
