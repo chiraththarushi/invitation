@@ -26,36 +26,30 @@
           <span class="peek-name">Chirath &amp; Tharushi</span>
           <span class="peek-date">23 · July · 2026</span>
         </div>
-        <img class="envelope-img" src="envelope.jpg" id="envelope-img">
+        <img class="envelope-img" src="envelope.jpeg" alt="Luxury Wedding Invitation Envelope" id="envelope-img">
 
-        <!-- Wax Seal — tap this to open -->
+        <!-- WAX SEAL — tap to open -->
         <div class="wax-seal" id="wax-seal" onclick="openEnvelope()">
           <div class="wax-seal-body">
-            <!-- Outer decorative ring -->
-            <svg class="wax-seal-ring-svg" viewBox="0 0 110 110">
-              <circle cx="55" cy="55" r="50" fill="none" stroke="rgba(255,220,120,0.35)" stroke-width="0.8"/>
-              <circle cx="55" cy="55" r="44" fill="none" stroke="rgba(255,220,120,0.2)" stroke-width="0.5"/>
-              <!-- Arc text -->
-              <path id="arc-top" d="M 55,55 m -36,0 a 36,36 0 1,1 72,0" fill="none"/>
-              <path id="arc-bot" d="M 55,55 m -36,0 a 36,36 0 0,0 72,0" fill="none"/>
-              <text font-family="Cinzel, serif" font-size="7" fill="rgba(255,230,150,0.75)" letter-spacing="2">
-                <textPath href="#arc-top" startOffset="8%">CHIRATH &amp; THARUSHI</textPath>
+            <svg class="wax-seal-ring-svg" viewBox="0 0 120 120">
+              <circle cx="60" cy="60" r="55" fill="none" stroke="rgba(255,220,120,0.4)" stroke-width="1"/>
+              <circle cx="60" cy="60" r="48" fill="none" stroke="rgba(255,220,120,0.22)" stroke-width="0.6"/>
+              <path id="arc-top" d="M 60,60 m -40,0 a 40,40 0 1,1 80,0" fill="none"/>
+              <path id="arc-bot" d="M 60,60 m -40,0 a 40,40 0 0,0 80,0" fill="none"/>
+              <text font-family="Cinzel, serif" font-size="8.5" fill="rgba(255,235,160,0.85)" letter-spacing="2.2">
+                <textPath href="#arc-top" startOffset="6%">CHIRATH &amp; THARUSHI</textPath>
               </text>
-              <text font-family="Cinzel, serif" font-size="7" fill="rgba(255,230,150,0.6)" letter-spacing="3">
-                <textPath href="#arc-bot" startOffset="18%">✦ 23 · JULY · 2026 ✦</textPath>
+              <text font-family="Cinzel, serif" font-size="8" fill="rgba(255,230,150,0.7)" letter-spacing="2.5">
+                <textPath href="#arc-bot" startOffset="14%">✦ 23 · JULY · 2026 ✦</textPath>
               </text>
             </svg>
-            <!-- Monogram -->
             <div class="wax-seal-monogram">C&amp;T</div>
-            <!-- Tap label inside seal -->
             <div class="wax-seal-tap">Tap to Open</div>
           </div>
-          <!-- Glow ring shown on hover/pulse -->
           <div class="wax-seal-glow"></div>
         </div>
 
       </div>
-      <!-- Hide the old text hint since seal replaces it -->
       <p class="tap-hint" id="tap-hint" style="opacity:0;pointer-events:none;height:0;margin:0;"></p>
       <p class="opening-tagline">Two souls, one heart —<br>a love story written in the stars</p>
     </div>
@@ -67,44 +61,33 @@
 
   <!-- ── HERO ── -->
   <div class="hero">
-    <!-- SVG botanical art — top right -->
+
+    <!-- Botanical art top-right -->
     <div class="hero-botanical hero-botanical-tr" aria-hidden="true">
-      <svg viewBox="0 0 260 320" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <!-- Main stem -->
+      <svg viewBox="0 0 260 320" fill="none">
         <path d="M200 310 Q185 260 170 210 Q155 160 160 110 Q165 70 180 40" stroke="#C8A96B" stroke-width="1" fill="none" opacity="0.35"/>
-        <!-- Left branches -->
         <path d="M168 200 Q140 185 115 175 Q90 168 70 160" stroke="#C8A96B" stroke-width="0.8" fill="none" opacity="0.3"/>
         <path d="M162 165 Q138 148 118 138 Q100 130 82 120" stroke="#C8A96B" stroke-width="0.7" fill="none" opacity="0.28"/>
         <path d="M165 130 Q148 108 138 88 Q130 72 128 52" stroke="#C8A96B" stroke-width="0.7" fill="none" opacity="0.25"/>
-        <!-- Right branches -->
         <path d="M172 190 Q195 178 215 165 Q232 154 246 140" stroke="#C8A96B" stroke-width="0.7" fill="none" opacity="0.25"/>
         <path d="M175 155 Q192 140 208 128 Q222 118 235 105" stroke="#C8A96B" stroke-width="0.6" fill="none" opacity="0.22"/>
-        <!-- Leaves on left main branch -->
         <ellipse cx="100" cy="162" rx="14" ry="6" fill="#C8A96B" opacity="0.12" transform="rotate(-20 100 162)"/>
         <ellipse cx="75" cy="152" rx="11" ry="5" fill="#C8A96B" opacity="0.1" transform="rotate(-18 75 152)"/>
         <ellipse cx="105" cy="132" rx="13" ry="5" fill="#C8A96B" opacity="0.1" transform="rotate(-25 105 132)"/>
         <ellipse cx="130" cy="60" rx="10" ry="5" fill="#C8A96B" opacity="0.1" transform="rotate(-40 130 60)"/>
-        <!-- Leaves on right branch -->
         <ellipse cx="230" cy="148" rx="12" ry="5" fill="#C8A96B" opacity="0.1" transform="rotate(20 230 148)"/>
         <ellipse cx="220" cy="118" rx="11" ry="5" fill="#C8A96B" opacity="0.09" transform="rotate(25 220 118)"/>
-        <!-- Small rose at top -->
         <circle cx="180" cy="40" r="7" fill="none" stroke="#C8A96B" stroke-width="0.7" opacity="0.3"/>
         <circle cx="180" cy="40" r="4" fill="#C8A96B" opacity="0.12"/>
-        <path d="M176 36 Q180 33 184 36 Q187 40 184 44 Q180 47 176 44 Q173 40 176 36Z" fill="#C8A96B" opacity="0.1"/>
-        <!-- Small buds -->
         <circle cx="70" cy="155" r="4" fill="none" stroke="#C8A96B" stroke-width="0.6" opacity="0.25"/>
         <circle cx="70" cy="155" r="2" fill="#C8A96B" opacity="0.1"/>
         <circle cx="246" cy="135" r="3.5" fill="none" stroke="#C8A96B" stroke-width="0.6" opacity="0.2"/>
-        <!-- Tiny leaf dots along stem -->
-        <circle cx="163" cy="220" r="1.5" fill="#C8A96B" opacity="0.2"/>
-        <circle cx="166" cy="180" r="1.5" fill="#C8A96B" opacity="0.18"/>
-        <circle cx="164" cy="145" r="1.5" fill="#C8A96B" opacity="0.18"/>
       </svg>
     </div>
 
-    <!-- SVG botanical art — bottom left -->
+    <!-- Botanical art bottom-left -->
     <div class="hero-botanical hero-botanical-bl" aria-hidden="true">
-      <svg viewBox="0 0 260 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 260 320" fill="none">
         <path d="M60 10 Q75 60 90 110 Q105 160 100 210 Q95 250 80 280" stroke="#C8A96B" stroke-width="1" fill="none" opacity="0.35"/>
         <path d="M92 120 Q120 105 145 95 Q170 88 190 80" stroke="#C8A96B" stroke-width="0.8" fill="none" opacity="0.3"/>
         <path d="M98 155 Q122 142 142 132 Q160 124 178 115" stroke="#C8A96B" stroke-width="0.7" fill="none" opacity="0.28"/>
@@ -118,15 +101,22 @@
         <ellipse cx="28" cy="120" rx="12" ry="5" fill="#C8A96B" opacity="0.1" transform="rotate(-20 28 120)"/>
         <circle cx="80" cy="280" r="7" fill="none" stroke="#C8A96B" stroke-width="0.7" opacity="0.3"/>
         <circle cx="80" cy="280" r="4" fill="#C8A96B" opacity="0.12"/>
-        <path d="M76 276 Q80 273 84 276 Q87 280 84 284 Q80 287 76 284 Q73 280 76 276Z" fill="#C8A96B" opacity="0.1"/>
         <circle cx="190" cy="74" r="4" fill="none" stroke="#C8A96B" stroke-width="0.6" opacity="0.25"/>
         <circle cx="14" cy="90" r="3.5" fill="none" stroke="#C8A96B" stroke-width="0.6" opacity="0.2"/>
       </svg>
     </div>
 
+    <!-- Crest — bigger size -->
     <div class="hero-monogram reveal">
-      <img src="crest.png" alt="Chirath and Tharushi Monogram Crest" class="monogram-img" onerror="this.style.display='none'">
-      
+      <img src="crest.png" alt="C&T Crest" class="monogram-img" onerror="this.style.display='none';document.querySelector('.monogram-fallback').style.display='block'">
+      <svg class="monogram-svg monogram-fallback" viewBox="0 0 90 90" fill="none" style="display:none">
+        <circle cx="45" cy="45" r="40" stroke="#C8A96B" stroke-width="0.8" opacity="0.5"/>
+        <circle cx="45" cy="45" r="34" stroke="#C8A96B" stroke-width="0.4" opacity="0.3"/>
+        <text x="45" y="52" text-anchor="middle" font-family="Great Vibes, cursive" font-size="26" fill="none" stroke="#C8A96B" stroke-width="0.5" opacity="0.7">C&amp;T</text>
+      </svg>
+    </div>
+
+    <!-- "Wedding Invitation" — slightly bigger -->
     <span class="hero-eyebrow reveal">— Wedding Invitation —</span>
 
     <div class="hero-names-block reveal reveal-delay-1">
@@ -143,6 +133,7 @@
       Two souls, one heart — a love story written in the stars,<br>celebrated with you.
     </p>
 
+    <!-- Formal invitation text — slightly bigger -->
     <div class="invitation-formal reveal reveal-delay-3">
       <p class="inv-parents">Mr. &amp; Mrs. Ranaweera</p>
       <p class="inv-together">Together With</p>
@@ -156,7 +147,8 @@
 
   <!-- ── WEDDING DETAILS ── -->
   <section id="details">
-    <span class="section-eyebrow reveal">✦ &nbsp;The Celebration&nbsp; ✦</span>
+    <!-- "The Celebration" eyebrow slightly bigger -->
+    <span class="section-eyebrow section-eyebrow-lg reveal">✦ &nbsp;The Celebration&nbsp; ✦</span>
     <h2 class="section-title reveal">Wedding Details</h2>
     <div class="gold-divider reveal"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M7 0l1.8 5.2H14l-4.3 3.1 1.6 5.2L7 10.5l-4.3 3 1.6-5.2L0 5.2h5.2z" fill="#C8A96B"/></svg></div>
 
@@ -198,37 +190,23 @@
     </div>
   </section>
 
-  <!-- ── COUPLE PHOTOS ── -->
-  <!--
+  <!-- ── COUPLE PHOTOS ──
   ════════════════════════════════════════════════════════════
   HOW TO ADD YOUR COUPLE PHOTOS:
-  ────────────────────────────────────────────────────────────
-  1. Save your 3 couple photos with these exact filenames:
-       photo1.jpg  (engagement / candid portrait)
-       photo2.jpg  (outdoor / location photo)
-       photo3.jpg  (romantic / close-up)
-  2. Place them in the same folder as index.html
-  3. The photos will automatically appear in this section.
-  4. Best aspect ratios:
-       photo1.jpg → 3:4 portrait (e.g. 900×1200px)
-       photo2.jpg → 4:3 landscape (e.g. 1200×900px)
-       photo3.jpg → 3:4 portrait (e.g. 900×1200px)
-  5. To change captions, edit the <span class="photo-caption"> text below.
-  ════════════════════════════════════════════════════════════
-  -->
+  Your files are named with spaces — the HTML below matches
+  your exact filenames: "photo 1.jpg", "photo 2.jpeg", "photo 3.jpeg"
+  Just place them in the same folder as index.html.
+  ════════════════════════════════════════════════════════════ -->
   <div class="photos-section" id="photos">
-    <!-- Botanical divider top -->
     <div class="section-botanical-divider" aria-hidden="true">
-      <svg viewBox="0 0 500 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 500 60" fill="none">
         <line x1="0" y1="30" x2="170" y2="30" stroke="#C8A96B" stroke-width="0.5" opacity="0.4"/>
         <path d="M170 30 Q185 15 200 30 Q215 45 230 30" stroke="#C8A96B" stroke-width="0.7" fill="none" opacity="0.5"/>
-        <!-- Central rose motif -->
         <circle cx="250" cy="30" r="10" fill="none" stroke="#C8A96B" stroke-width="0.6" opacity="0.5"/>
         <circle cx="250" cy="30" r="6" fill="none" stroke="#C8A96B" stroke-width="0.5" opacity="0.4"/>
         <circle cx="250" cy="30" r="2.5" fill="#C8A96B" opacity="0.3"/>
         <path d="M240 30 Q245 22 250 30 Q255 38 260 30 Q255 22 250 30Z" fill="#C8A96B" opacity="0.12"/>
         <path d="M250 20 Q258 25 250 30 Q242 35 250 40 Q258 35 250 30Z" fill="#C8A96B" opacity="0.1"/>
-        <!-- Tiny leaves around center -->
         <ellipse cx="236" cy="24" rx="4" ry="2" fill="#C8A96B" opacity="0.12" transform="rotate(-45 236 24)"/>
         <ellipse cx="264" cy="24" rx="4" ry="2" fill="#C8A96B" opacity="0.12" transform="rotate(45 264 24)"/>
         <ellipse cx="236" cy="36" rx="4" ry="2" fill="#C8A96B" opacity="0.1" transform="rotate(45 236 36)"/>
@@ -238,11 +216,44 @@
       </svg>
     </div>
 
-    <span class="section-eyebrow reveal">✦ &nbsp;Our Story&nbsp; ✦</span>
+    <!-- "Our Story" eyebrow slightly bigger -->
+    <span class="section-eyebrow section-eyebrow-lg reveal">✦ &nbsp;Our Story&nbsp; ✦</span>
     <h2 class="section-title reveal" style="margin-bottom:8px;">A Love to Remember</h2>
     <p class="photos-subtitle reveal">Every moment with you is a treasure we hold close to our hearts</p>
 
-    
+    <div class="photos-grid">
+      <!-- PHOTO 1 — filename: "photo 1.jpg" -->
+      <div class="photo-card photo-card-portrait reveal">
+        <div class="photo-wrap">
+          <img src="photo 1.jpg" alt="Chirath and Tharushi" class="couple-photo"
+               onerror="this.parentElement.classList.add('photo-placeholder')">
+          <div class="photo-overlay"><div class="photo-overlay-text">C &amp; T</div></div>
+        </div>
+        <div class="photo-caption-wrap"><span class="photo-caption">Our Beginning</span></div>
+      </div>
+
+      <!-- PHOTO 2 — filename: "photo 2.jpeg" -->
+      <div class="photo-card photo-card-landscape reveal reveal-delay-1">
+        <div class="photo-wrap">
+          <img src="photo 2.jpeg" alt="Chirath and Tharushi" class="couple-photo"
+               onerror="this.parentElement.classList.add('photo-placeholder')">
+          <div class="photo-overlay"><div class="photo-overlay-text">C &amp; T</div></div>
+        </div>
+        <div class="photo-caption-wrap"><span class="photo-caption">Always Together</span></div>
+      </div>
+
+      <!-- PHOTO 3 — filename: "photo 3.jpeg" -->
+      <div class="photo-card photo-card-portrait reveal reveal-delay-2">
+        <div class="photo-wrap">
+          <img src="photo 3.jpeg" alt="Chirath and Tharushi" class="couple-photo"
+               onerror="this.parentElement.classList.add('photo-placeholder')">
+          <div class="photo-overlay"><div class="photo-overlay-text">C &amp; T</div></div>
+        </div>
+        <div class="photo-caption-wrap"><span class="photo-caption">Forever Starts Now</span></div>
+      </div>
+    </div>
+  </div>
+
   <!-- ── COUNTDOWN ── -->
   <div id="countdown-section">
     <div class="countdown-bg"></div>
@@ -253,25 +264,13 @@
       <div class="gold-divider reveal"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M7 0l1.8 5.2H14l-4.3 3.1 1.6 5.2L7 10.5l-4.3 3 1.6-5.2L0 5.2h5.2z" fill="#C8A96B"/></svg></div>
       <p class="countdown-romantic reveal">Every second that passes brings us closer to forever.<br>We cannot wait to celebrate with you.</p>
       <div class="countdown-grid reveal reveal-delay-1">
-        <div class="countdown-unit">
-          <span class="countdown-number" id="cd-days">000</span>
-          <span class="countdown-label">Days</span>
-        </div>
+        <div class="countdown-unit"><span class="countdown-number" id="cd-days">000</span><span class="countdown-label">Days</span></div>
         <span class="countdown-sep">:</span>
-        <div class="countdown-unit">
-          <span class="countdown-number" id="cd-hours">00</span>
-          <span class="countdown-label">Hours</span>
-        </div>
+        <div class="countdown-unit"><span class="countdown-number" id="cd-hours">00</span><span class="countdown-label">Hours</span></div>
         <span class="countdown-sep">:</span>
-        <div class="countdown-unit">
-          <span class="countdown-number" id="cd-mins">00</span>
-          <span class="countdown-label">Minutes</span>
-        </div>
+        <div class="countdown-unit"><span class="countdown-number" id="cd-mins">00</span><span class="countdown-label">Minutes</span></div>
         <span class="countdown-sep">:</span>
-        <div class="countdown-unit">
-          <span class="countdown-number" id="cd-secs">00</span>
-          <span class="countdown-label">Seconds</span>
-        </div>
+        <div class="countdown-unit"><span class="countdown-number" id="cd-secs">00</span><span class="countdown-label">Seconds</span></div>
       </div>
       <span class="countdown-tagline reveal reveal-delay-2">Until We Say "I Do"</span>
     </div>
@@ -279,17 +278,16 @@
 
   <!-- ── VENUE ── -->
   <section id="venue">
-    <span class="section-eyebrow reveal">✦ &nbsp;Find Us&nbsp; ✦</span>
+    <span class="section-eyebrow section-eyebrow-lg reveal">✦ &nbsp;Find Us&nbsp; ✦</span>
     <h2 class="section-title reveal">Venue &amp; Directions</h2>
     <div class="gold-divider reveal"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M7 0l1.8 5.2H14l-4.3 3.1 1.6 5.2L7 10.5l-4.3 3 1.6-5.2L0 5.2h5.2z" fill="#C8A96B"/></svg></div>
-
     <div class="venue-img-wrap reveal reveal-delay-1">
       <img src="venue.jpeg" alt="Sawingir Hills Magnolia Hall" class="venue-img">
     </div>
-
     <div class="reveal reveal-delay-1">
-      <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(18px,5vw,22px);color:var(--charcoal-light);font-style:italic;margin:22px 0 5px">Sawingir Hills — Magnolia Hall</p>
-      <p style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:6px">Thalagala, Gonapala</p>
+      <p class="venue-name-text">Sawingir Hills — Magnolia Hall</p>
+      <!-- "Thalagala, Gonapala" slightly bigger & darker -->
+      <p class="venue-location-text">Thalagala, Gonapala</p>
       <a href="https://maps.app.goo.gl/mrgZQBJW6bUSeLLA6" target="_blank" rel="noopener" class="venue-btn">
         <svg width="14" height="14" viewBox="0 0 28 28" fill="none"><path d="M14 3C9.6 3 6 6.6 6 11c0 6.5 8 14 8 14s8-7.5 8-14c0-4.4-3.6-8-8-8z" stroke="white" stroke-width="1.5" fill="none"/><circle cx="14" cy="11" r="2.5" fill="white" opacity="0.8"/></svg>
         Get Directions
@@ -298,24 +296,10 @@
   </section>
 
   <!-- ── RSVP ── -->
-  <!--
-  ════════════════════════════════════════════════════════════
-  RSVP SYSTEM — HOW RESPONSES ARE SAVED
-  ────────────────────────────────────────────────────────────
-  • Responses are saved to the guest's browser (localStorage)
-    AND sent directly to the couple via WhatsApp.
-  • When a guest submits, WhatsApp opens with a pre-filled
-    message containing all their details — you receive it
-    instantly on your phone.
-  • No Google Form redirect. No confusion. One clean step.
-  • To view all saved responses in the browser, open the
-    browser console and type:  showRSVPResponses()
-  ════════════════════════════════════════════════════════════
-  -->
   <section id="rsvp" class="rsvp-section">
     <!-- Botanical side art -->
     <div class="rsvp-botanical rsvp-botanical-left" aria-hidden="true">
-      <svg viewBox="0 0 80 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 80 300" fill="none">
         <path d="M40 295 Q35 240 38 185 Q41 140 35 95 Q30 60 38 20" stroke="#C8A96B" stroke-width="0.8" fill="none" opacity="0.3"/>
         <path d="M38 220 Q20 205 8 192" stroke="#C8A96B" stroke-width="0.6" fill="none" opacity="0.25"/>
         <path d="M37 175 Q18 162 5 150" stroke="#C8A96B" stroke-width="0.6" fill="none" opacity="0.22"/>
@@ -324,13 +308,12 @@
         <ellipse cx="8" cy="185" rx="9" ry="4" fill="#C8A96B" opacity="0.1" transform="rotate(-25 8 185)"/>
         <ellipse cx="5" cy="143" rx="8" ry="3.5" fill="#C8A96B" opacity="0.09" transform="rotate(-20 5 143)"/>
         <ellipse cx="10" cy="100" rx="7" ry="3" fill="#C8A96B" opacity="0.08" transform="rotate(-22 10 100)"/>
-        <ellipse cx="68" cy="56" rx="7" ry="3" fill="#C8A96B" opacity="0.08" transform="rotate(20 68 56)"/>
         <circle cx="38" cy="20" r="5" fill="none" stroke="#C8A96B" stroke-width="0.6" opacity="0.28"/>
         <circle cx="38" cy="20" r="2.5" fill="#C8A96B" opacity="0.12"/>
       </svg>
     </div>
     <div class="rsvp-botanical rsvp-botanical-right" aria-hidden="true">
-      <svg viewBox="0 0 80 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 80 300" fill="none">
         <path d="M40 295 Q45 240 42 185 Q39 140 45 95 Q50 60 42 20" stroke="#C8A96B" stroke-width="0.8" fill="none" opacity="0.3"/>
         <path d="M42 220 Q60 205 72 192" stroke="#C8A96B" stroke-width="0.6" fill="none" opacity="0.25"/>
         <path d="M43 175 Q62 162 75 150" stroke="#C8A96B" stroke-width="0.6" fill="none" opacity="0.22"/>
@@ -339,28 +322,24 @@
         <ellipse cx="72" cy="185" rx="9" ry="4" fill="#C8A96B" opacity="0.1" transform="rotate(25 72 185)"/>
         <ellipse cx="75" cy="143" rx="8" ry="3.5" fill="#C8A96B" opacity="0.09" transform="rotate(20 75 143)"/>
         <ellipse cx="70" cy="100" rx="7" ry="3" fill="#C8A96B" opacity="0.08" transform="rotate(22 70 100)"/>
-        <ellipse cx="12" cy="56" rx="7" ry="3" fill="#C8A96B" opacity="0.08" transform="rotate(-20 12 56)"/>
         <circle cx="42" cy="20" r="5" fill="none" stroke="#C8A96B" stroke-width="0.6" opacity="0.28"/>
         <circle cx="42" cy="20" r="2.5" fill="#C8A96B" opacity="0.12"/>
       </svg>
     </div>
 
     <div class="rsvp-inner">
-      <span class="section-eyebrow reveal">✦ &nbsp;RSVP&nbsp; ✦</span>
+      <!-- "RSVP" eyebrow slightly bigger & darker -->
+      <span class="section-eyebrow section-eyebrow-lg section-eyebrow-dark reveal">✦ &nbsp;RSVP&nbsp; ✦</span>
       <h2 class="section-title reveal">Kindly Reply</h2>
       <div class="gold-divider reveal"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M7 0l1.8 5.2H14l-4.3 3.1 1.6 5.2L7 10.5l-4.3 3 1.6-5.2L0 5.2h5.2z" fill="#C8A96B"/></svg></div>
-      <p class="reveal" style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(15px,4vw,18px);color:var(--charcoal-light);margin-top:8px;text-align:center;line-height:1.7;">
-        Please let us know you will be joining us on our special day
-      </p>
+      <p class="rsvp-intro reveal">Please let us know you will be joining us on our special day</p>
 
       <div class="rsvp-card-wrap reveal reveal-delay-1">
-
         <div id="rsvp-form">
           <span class="rsvp-deadline">
             <svg width="12" height="12" viewBox="0 0 28 28" fill="none" style="vertical-align:middle;margin-right:6px;"><circle cx="14" cy="14" r="11" stroke="#A67C37" stroke-width="1.2"/><line x1="14" y1="7" x2="14" y2="14" stroke="#A67C37" stroke-width="1.5" stroke-linecap="round"/><line x1="14" y1="14" x2="19" y2="17" stroke="#A67C37" stroke-width="1.5" stroke-linecap="round"/></svg>
             Kindly respond by 15 July 2026
           </span>
-
           <div class="form-group">
             <label class="form-label" for="rsvp-name">Your Full Name</label>
             <input type="text" class="form-input" id="rsvp-name" placeholder="Enter your name" autocomplete="name">
@@ -381,13 +360,11 @@
             <textarea class="form-textarea" id="rsvp-message" placeholder="Leave your warm wishes here..."></textarea>
           </div>
           <button type="button" class="submit-btn" onclick="submitRSVP()">Confirm Attendance</button>
-
           <p class="rsvp-honor-text">
             We are honoured to celebrate this special day with you.<br>
             So we may prepare for your arrival,<br>we kindly ask you to respond at your earliest convenience.
           </p>
         </div>
-
         <div class="rsvp-success" id="rsvp-success">
           <span class="checkmark">✨</span>
           <h3>Thank You</h3>
@@ -399,10 +376,10 @@
 
   <!-- ── CONTACT ── -->
   <section id="contact">
-    <span class="section-eyebrow reveal">✦ &nbsp;Contact&nbsp; ✦</span>
+    <!-- "Contact" eyebrow & role labels bigger & darker -->
+    <span class="section-eyebrow section-eyebrow-lg section-eyebrow-dark reveal">✦ &nbsp;Contact&nbsp; ✦</span>
     <h2 class="section-title reveal">Reach Out to Us</h2>
     <div class="gold-divider reveal"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M7 0l1.8 5.2H14l-4.3 3.1 1.6 5.2L7 10.5l-4.3 3 1.6-5.2L0 5.2h5.2z" fill="#C8A96B"/></svg></div>
-
     <div class="contact-cards">
       <div class="contact-card reveal">
         <span class="contact-role">The Groom</span>
@@ -430,10 +407,8 @@
 
   <!-- ── THANK YOU ── -->
   <div class="thankyou-section">
-    <!-- Botanical footer decoration -->
     <div class="thankyou-botanical" aria-hidden="true">
-      <svg viewBox="0 0 400 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <!-- Left branch -->
+      <svg viewBox="0 0 400 100" fill="none">
         <path d="M5 80 Q60 65 110 55 Q145 48 175 50" stroke="#C8A96B" stroke-width="0.7" fill="none" opacity="0.3"/>
         <path d="M20 75 Q25 58 32 45" stroke="#C8A96B" stroke-width="0.5" fill="none" opacity="0.22"/>
         <path d="M55 65 Q58 48 62 36" stroke="#C8A96B" stroke-width="0.5" fill="none" opacity="0.2"/>
@@ -441,7 +416,6 @@
         <ellipse cx="32" cy="42" rx="7" ry="3" fill="#C8A96B" opacity="0.1" transform="rotate(-70 32 42)"/>
         <ellipse cx="62" cy="33" rx="6" ry="2.5" fill="#C8A96B" opacity="0.09" transform="rotate(-65 62 33)"/>
         <ellipse cx="98" cy="25" rx="6" ry="2.5" fill="#C8A96B" opacity="0.09" transform="rotate(-70 98 25)"/>
-        <!-- Center motif -->
         <circle cx="200" cy="50" r="12" fill="none" stroke="#C8A96B" stroke-width="0.6" opacity="0.35"/>
         <circle cx="200" cy="50" r="7" fill="none" stroke="#C8A96B" stroke-width="0.5" opacity="0.25"/>
         <circle cx="200" cy="50" r="3" fill="#C8A96B" opacity="0.2"/>
@@ -451,7 +425,6 @@
         <ellipse cx="217" cy="40" rx="5" ry="2" fill="#C8A96B" opacity="0.1" transform="rotate(45 217 40)"/>
         <ellipse cx="183" cy="60" rx="5" ry="2" fill="#C8A96B" opacity="0.09" transform="rotate(45 183 60)"/>
         <ellipse cx="217" cy="60" rx="5" ry="2" fill="#C8A96B" opacity="0.09" transform="rotate(-45 217 60)"/>
-        <!-- Right branch (mirrored) -->
         <path d="M395 80 Q340 65 290 55 Q255 48 225 50" stroke="#C8A96B" stroke-width="0.7" fill="none" opacity="0.3"/>
         <path d="M380 75 Q375 58 368 45" stroke="#C8A96B" stroke-width="0.5" fill="none" opacity="0.22"/>
         <path d="M345 65 Q342 48 338 36" stroke="#C8A96B" stroke-width="0.5" fill="none" opacity="0.2"/>
@@ -461,8 +434,8 @@
         <ellipse cx="302" cy="25" rx="6" ry="2.5" fill="#C8A96B" opacity="0.09" transform="rotate(70 302 25)"/>
       </svg>
     </div>
-
-    <span class="section-eyebrow reveal">✦ &nbsp;With Love&nbsp; ✦</span>
+    <!-- "With Love" eyebrow bigger & darker -->
+    <span class="section-eyebrow section-eyebrow-lg section-eyebrow-dark reveal">✦ &nbsp;With Love&nbsp; ✦</span>
     <h2 class="section-title reveal" style="font-size:clamp(48px,13vw,80px);font-weight:300;">Thank You</h2>
     <div class="gold-divider reveal"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M7 0l1.8 5.2H14l-4.3 3.1 1.6 5.2L7 10.5l-4.3 3 1.6-5.2L0 5.2h5.2z" fill="#C8A96B"/></svg></div>
     <p class="thankyou-quote reveal">
@@ -471,16 +444,13 @@
       We look forward to creating unforgettable memories together.
     </p>
     <span class="thankyou-heart reveal reveal-delay-1">&#9825;</span>
-    <p class="thankyou-honor reveal reveal-delay-1">
-      Your presence is the greatest gift we could ever ask for.
-    </p>
+    <p class="thankyou-honor reveal reveal-delay-1">Your presence is the greatest gift we could ever ask for.</p>
     <span class="thankyou-sig reveal reveal-delay-2">Chirath &amp; Tharushi</span>
     <div class="gold-divider reveal reveal-delay-3"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M7 0l1.8 5.2H14l-4.3 3.1 1.6 5.2L7 10.5l-4.3 3 1.6-5.2L0 5.2h5.2z" fill="#C8A96B"/></svg></div>
     <span class="footer-meta reveal reveal-delay-3">Chirath &amp; Tharushi &nbsp;·&nbsp; 23 July 2026 &nbsp;·&nbsp; Sawingir Hills, Sri Lanka</span>
   </div>
 
 </div><!-- /main-content -->
-
 <script src="script.js"></script>
 </body>
 </html>
