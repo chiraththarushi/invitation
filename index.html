@@ -373,54 +373,6 @@
       </div>
     </div>
   </section>
-
-<form id="rsvp-form">
-
-    <input
-        type="text"
-        id="rsvp-name"
-        placeholder="Your Name"
-        required
-    >
-
-    <input
-        type="number"
-        id="rsvp-guests"
-        placeholder="Number of Guests"
-        min="1"
-        value="1"
-    >
-
-    <div class="attendance-group">
-        <button type="button"
-                id="att-yes"
-                onclick="selectAttendance('yes')">
-            Joyfully Accept
-        </button>
-
-        <button type="button"
-                id="att-no"
-                onclick="selectAttendance('no')">
-            Regretfully Decline
-        </button>
-    </div>
-
-    <textarea
-        id="rsvp-message"
-        placeholder="Message (optional)">
-    </textarea>
-
-    <button
-        type="button"
-        onclick="submitRSVP()">
-        Confirm Attendance
-    </button>
-
-</form>
-
-<div id="rsvp-success">
-    Thank you for your response.
-</div>
   
   <!-- ── CONTACT ── -->
   <section id="contact">
