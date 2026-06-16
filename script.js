@@ -167,142 +167,26 @@ function openEnvelope() {
   }, 2800);
 }
 
-/* ══════════════════════════════════
-3. RSVP — Google Sheets
-══════════════════════════════════ */
+function doPost(e) {
 
-const GOOGLE_SCRIPT_URL =
-'https://script.google.com/macros/s/AKfycbxpUffzbsvlDPrjqhoKkccMnFGXX8TTa3O9YwN8cCfm5ZZglRKsVbexrtBEQd4D5ktGww/exec';
+const sheet =
+SpreadsheetApp
+.getActiveSpreadsheet()
+.getSheetByName("Sheet1");
 
-let attendanceVal = '';
+const data =
+JSON.parse(e.postData.contents);
 
-function selectAttendance(val) {
-attendanceVal = val;
+sheet.appendRow([
+new Date(),
+data.name,
+data.guests,
+data.attendance,
+data.message
+]);
 
-document.getElementById('att-yes')
-.classList.toggle('selected', val === 'yes');
-
-document.getElementById('att-no')
-.classList.toggle('selected', val === 'no');
-}
-
-function submitRSVP() {
-
-const name =
-document.getElementById('rsvp-name')
-.value.trim();
-
-const guests =
-document.getElementById('rsvp-guests')
-.value.trim() || '1';
-
-const message =
-document.getElementById('rsvp-message')
-.value.trim();
-
-if (!name) {
-shakeField('rsvp-name');
-return;
-}
-
-if (!attendanceVal) {
-
-```
-const group =
-  document.querySelector('.attendance-group');
-
-group.style.outline =
-  '1.5px solid rgba(200,169,107,0.7)';
-
-group.style.borderRadius = '5px';
-
-setTimeout(() => {
-  group.style.outline = 'none';
-}, 1600);
-
-return;
-```
-
-}
-
-const attendanceText =
-attendanceVal === 'yes'
-? 'Joyfully Accept'
-: 'Regretfully Decline';
-
-fetch(GOOGLE_SCRIPT_URL, {
-method: 'POST',
-headers: {
-'Content-Type': 'text/plain;charset=utf-8'
-},
-body: JSON.stringify({
-name: name,
-guests: guests,
-attendance: attendanceText,
-message: message
-})
-})
-
-.then(response => response.text())
-
-.then(() => {
-
-```
-document.getElementById('rsvp-form')
-  .style.display = 'none';
-
-document.getElementById('rsvp-success')
-  .classList.add('show');
-```
-
-})
-
-.catch(error => {
-
-```
-console.error(error);
-
-alert(
-  'Unable to submit RSVP. Please try again.'
-);
-```
-
-});
-}
-
-function shakeField(id) {
-
-const el = document.getElementById(id);
-
-el.style.transition =
-'transform 0.1s ease, border-color 0.3s';
-
-el.style.borderColor =
-'rgba(200,169,107,0.9)';
-
-el.style.transform =
-'translateX(-4px)';
-
-setTimeout(() => {
-el.style.transform = 'translateX(4px)';
-}, 100);
-
-setTimeout(() => {
-el.style.transform = 'translateX(-3px)';
-}, 200);
-
-setTimeout(() => {
-el.style.transform = 'translateX(3px)';
-}, 300);
-
-setTimeout(() => {
-el.style.transform = 'translateX(0)';
-el.focus();
-}, 400);
-
-setTimeout(() => {
-el.style.borderColor = '';
-}, 1500);
+return ContentService
+.createTextOutput("success");
 }
 
 
