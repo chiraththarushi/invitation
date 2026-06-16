@@ -208,22 +208,19 @@ return;
 
 if (!attendanceVal) {
 
-```
-const group =
-  document.querySelector('.attendance-group');
+  const group =
+    document.querySelector('.attendance-group');
 
-group.style.outline =
-  '1.5px solid rgba(200,169,107,0.7)';
+  group.style.outline =
+    '1.5px solid rgba(200,169,107,0.7)';
 
-group.style.borderRadius = '5px';
+  group.style.borderRadius = '5px';
 
-setTimeout(() => {
-  group.style.outline = 'none';
-}, 1600);
+  setTimeout(() => {
+    group.style.outline = 'none';
+  }, 1600);
 
-return;
-```
-
+  return;
 }
 
 const attendanceText =
@@ -247,23 +244,19 @@ message
 
 .then(() => {
 
-```
-document.getElementById('rsvp-form')
-  .style.display = 'none';
+  document.getElementById('rsvp-form')
+    .style.display = 'none';
 
-document.getElementById('rsvp-success')
-  .classList.add('show');
-```
+  document.getElementById('rsvp-success')
+    .classList.add('show');
 
 })
 
 .catch(error => {
 
-```
-console.error(error);
+  console.error(error);
 
-alert('Unable to submit RSVP.');
-```
+  alert('Unable to submit RSVP.');
 
 });
 }
