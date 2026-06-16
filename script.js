@@ -196,7 +196,7 @@ document.getElementById('rsvp-name')
 const email =
 document.getElementById('rsvp-email')
 .value.trim();
-   
+
 const guests =
 document.getElementById('rsvp-guests')
 .value.trim() || '1';
@@ -238,21 +238,31 @@ attendanceVal === 'yes'
 : 'Regretfully Decline';
 
 fetch(GOOGLE_SCRIPT_URL, {
-method: 'POST',
-mode: 'no-cors',
-headers: {
-'Content-Type': 'text/plain;charset=utf-8'
-},
-body: JSON.stringify({
-name,
-email,
-guests,
-attendance: attendanceText,
-message
-})
+  method: 'POST',
+  headers: {
+    'Content-Type': 'text/plain;charset=utf-8'
+  },
+  body: JSON.stringify({
+    name,
+    email,
+    guests,
+    attendance: attendanceText,
+    message
+  })
 })
 
-.then(() => {
+.then(response => response.text())
+
+.then(result => {
+
+  if (result === 'already_exists') {
+
+    alert(
+      'An RSVP has already been submitted using this email address.'
+    );
+
+    return;
+  }
 
   document.getElementById('rsvp-form')
     .style.display = 'none';
@@ -266,44 +276,11 @@ message
 
   console.error(error);
 
-  alert('Unable to submit RSVP.');
+  alert(
+    'Unable to submit RSVP. Please try again.'
+  );
 
 });
-}
-
-function shakeField(id) {
-
-const el = document.getElementById(id);
-
-el.style.transition =
-'transform 0.1s ease, border-color 0.3s';
-
-el.style.borderColor =
-'rgba(200,169,107,0.9)';
-
-el.style.transform =
-'translateX(-4px)';
-
-setTimeout(() => {
-el.style.transform = 'translateX(4px)';
-}, 100);
-
-setTimeout(() => {
-el.style.transform = 'translateX(-3px)';
-}, 200);
-
-setTimeout(() => {
-el.style.transform = 'translateX(3px)';
-}, 300);
-
-setTimeout(() => {
-el.style.transform = 'translateX(0)';
-el.focus();
-}, 400);
-
-setTimeout(() => {
-el.style.borderColor = '';
-}, 1500);
 }
 
 
