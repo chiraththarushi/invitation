@@ -193,6 +193,10 @@ const name =
 document.getElementById('rsvp-name')
 .value.trim();
 
+const email =
+document.getElementById('rsvp-email')
+.value.trim();
+   
 const guests =
 document.getElementById('rsvp-guests')
 .value.trim() || '1';
@@ -202,8 +206,13 @@ document.getElementById('rsvp-message')
 .value.trim();
 
 if (!name) {
-shakeField('rsvp-name');
-return;
+  shakeField('rsvp-name');
+  return;
+}
+
+if (!email) {
+  shakeField('rsvp-email');
+  return;
 }
 
 if (!attendanceVal) {
@@ -236,6 +245,7 @@ headers: {
 },
 body: JSON.stringify({
 name,
+email,
 guests,
 attendance: attendanceText,
 message
