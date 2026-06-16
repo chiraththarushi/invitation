@@ -172,7 +172,7 @@ function openEnvelope() {
 ══════════════════════════════════ */
 
 const GOOGLE_SCRIPT_URL =
-'https://script.google.com/macros/s/AKfycbxpUffzbsvlDPrjqhoKkccMnFGXX8TTa3O9YwN8cCfm5ZZglRKsVbexrtBEQd4D5ktGww/exec';
+'https://script.google.com/macros/s/AKfycbwUBABuDCPxI0zJeMKVlKjKIcLjzuCHGk9rbLKpRm9YkwP0cpehfzkce7RB-5ttky6_mw/exec';
 
 let attendanceVal = '';
 
