@@ -778,3 +778,15 @@ section {
   .wax-seal-body { width:100px; height:100px; }
   .wax-seal-monogram { font-size:24px; }
 }
+
+#rsvp-success{
+    display:none;
+    text-align:center;
+    padding:20px;
+    color:#C8A96B;
+    font-size:20px;
+}
+
+#rsvp-success.show{
+    display:block;
+}
