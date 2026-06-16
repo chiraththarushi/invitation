@@ -168,84 +168,143 @@ function openEnvelope() {
 }
 
 /* ══════════════════════════════════
-   3. RSVP — WhatsApp + localStorage
+3. RSVP — Google Sheets
 ══════════════════════════════════ */
-// Change this to the WhatsApp number to receive RSVPs
-// Format: country code + number, no spaces, no +
-// Sri Lanka: 94 then number without leading 0
-const WHATSAPP_NUMBER = '94752838185';
+
+const GOOGLE_SCRIPT_URL =
+'https://script.google.com/macros/s/AKfycbxpUffzbsvlDPrjqhoKkccMnFGXX8TTa3O9YwN8cCfm5ZZglRKsVbexrtBEQd4D5ktGww/exec';
 
 let attendanceVal = '';
 
 function selectAttendance(val) {
-  attendanceVal = val;
-  document.getElementById('att-yes').classList.toggle('selected', val === 'yes');
-  document.getElementById('att-no').classList.toggle('selected',  val === 'no');
-}
+attendanceVal = val;
 
-function saveResponseToStorage(data) {
-  try {
-    const existing = JSON.parse(localStorage.getItem('ct_rsvp_responses') || '[]');
-    existing.push({ ...data, submittedAt: new Date().toISOString() });
-    localStorage.setItem('ct_rsvp_responses', JSON.stringify(existing));
-  } catch(e) { /* silent fail */ }
+document.getElementById('att-yes')
+.classList.toggle('selected', val === 'yes');
+
+document.getElementById('att-no')
+.classList.toggle('selected', val === 'no');
 }
 
 function submitRSVP() {
-  const name    = document.getElementById('rsvp-name').value.trim();
-  const guests  = document.getElementById('rsvp-guests').value.trim() || '1';
-  const message = document.getElementById('rsvp-message').value.trim();
 
-  if (!name) { shakeField('rsvp-name'); return; }
-  if (!attendanceVal) {
-    const group = document.querySelector('.attendance-group');
-    group.style.outline = '1.5px solid rgba(200,169,107,0.7)';
-    group.style.borderRadius = '5px';
-    setTimeout(() => { group.style.outline = 'none'; }, 1600);
-    return;
-  }
+const name =
+document.getElementById('rsvp-name')
+.value.trim();
 
-  const attendanceText = attendanceVal === 'yes' ? 'Joyfully Accept ✓' : 'Regretfully Decline';
+const guests =
+document.getElementById('rsvp-guests')
+.value.trim() || '1';
 
-  saveResponseToStorage({ name, guests, attendance: attendanceText, message });
+const message =
+document.getElementById('rsvp-message')
+.value.trim();
 
-  const waMessage =
-    `✦ RSVP — Chirath & Tharushi Wedding ✦\n\n` +
-    `Name: ${name}\n` +
-    `Number of Guests: ${guests}\n` +
-    `Attendance: ${attendanceText}\n` +
-    (message ? `Message: ${message}\n` : '') +
-    `\nSent from the wedding invitation website.`;
+if (!name) {
+shakeField('rsvp-name');
+return;
+}
 
-  const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(waMessage)}`;
+if (!attendanceVal) {
 
-  document.getElementById('rsvp-form').style.display = 'none';
-  document.getElementById('rsvp-success').classList.add('show');
+```
+const group =
+  document.querySelector('.attendance-group');
 
-  setTimeout(() => { window.open(waUrl, '_blank'); }, 800);
+group.style.outline =
+  '1.5px solid rgba(200,169,107,0.7)';
+
+group.style.borderRadius = '5px';
+
+setTimeout(() => {
+  group.style.outline = 'none';
+}, 1600);
+
+return;
+```
+
+}
+
+const attendanceText =
+attendanceVal === 'yes'
+? 'Joyfully Accept'
+: 'Regretfully Decline';
+
+fetch(GOOGLE_SCRIPT_URL, {
+method: 'POST',
+headers: {
+'Content-Type': 'text/plain;charset=utf-8'
+},
+body: JSON.stringify({
+name: name,
+guests: guests,
+attendance: attendanceText,
+message: message
+})
+})
+
+.then(response => response.text())
+
+.then(() => {
+
+```
+document.getElementById('rsvp-form')
+  .style.display = 'none';
+
+document.getElementById('rsvp-success')
+  .classList.add('show');
+```
+
+})
+
+.catch(error => {
+
+```
+console.error(error);
+
+alert(
+  'Unable to submit RSVP. Please try again.'
+);
+```
+
+});
 }
 
 function shakeField(id) {
-  const el = document.getElementById(id);
-  el.style.transition = 'transform 0.1s ease, border-color 0.3s';
-  el.style.borderColor = 'rgba(200,169,107,0.9)';
-  el.style.transform = 'translateX(-4px)';
-  setTimeout(() => { el.style.transform = 'translateX(4px)'; }, 100);
-  setTimeout(() => { el.style.transform = 'translateX(-3px)'; }, 200);
-  setTimeout(() => { el.style.transform = 'translateX(3px)'; }, 300);
-  setTimeout(() => { el.style.transform = 'translateX(0)'; el.focus(); }, 400);
-  setTimeout(() => { el.style.borderColor = ''; }, 1500);
+
+const el = document.getElementById(id);
+
+el.style.transition =
+'transform 0.1s ease, border-color 0.3s';
+
+el.style.borderColor =
+'rgba(200,169,107,0.9)';
+
+el.style.transform =
+'translateX(-4px)';
+
+setTimeout(() => {
+el.style.transform = 'translateX(4px)';
+}, 100);
+
+setTimeout(() => {
+el.style.transform = 'translateX(-3px)';
+}, 200);
+
+setTimeout(() => {
+el.style.transform = 'translateX(3px)';
+}, 300);
+
+setTimeout(() => {
+el.style.transform = 'translateX(0)';
+el.focus();
+}, 400);
+
+setTimeout(() => {
+el.style.borderColor = '';
+}, 1500);
 }
 
-// View saved RSVPs in browser console: type showRSVPResponses()
-window.showRSVPResponses = function() {
-  try {
-    const data = JSON.parse(localStorage.getItem('ct_rsvp_responses') || '[]');
-    if (data.length === 0) { console.log('No responses yet.'); return; }
-    console.log(`%c✦ RSVP Responses (${data.length}) ✦`, 'color:#C8A96B;font-size:14px;font-weight:bold;');
-    console.table(data);
-  } catch(e) { console.log('Could not read responses.'); }
-};
 
 /* ══════════════════════════════════
    4. COUNTDOWN — 23 July 2026 10:00 AM
