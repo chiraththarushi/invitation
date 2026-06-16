@@ -167,29 +167,6 @@ function openEnvelope() {
   }, 2800);
 }
 
-function doPost(e) {
-
-const sheet =
-SpreadsheetApp
-.getActiveSpreadsheet()
-.getSheetByName("Sheet1");
-
-const data =
-JSON.parse(e.postData.contents);
-
-sheet.appendRow([
-new Date(),
-data.name,
-data.guests,
-data.attendance,
-data.message
-]);
-
-return ContentService
-.createTextOutput("success");
-}
-
-
 /* ══════════════════════════════════
    4. COUNTDOWN — 23 July 2026 10:00 AM
 ══════════════════════════════════ */
