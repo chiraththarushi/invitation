@@ -1054,20 +1054,19 @@ section {
 .corner-ornament img{
   width:100%;
   display:block;
+  transform-origin:center center;
 }
 
 /* TOP LEFT */
 .corner-tl{
   top:-15px;
   left:-15px;
-  transform:scaleY(-1);
 }
 
 /* TOP RIGHT */
 .corner-tr{
   top:-15px;
   right:-15px;
-  transform:rotate(180deg);
 }
 
 /* BOTTOM LEFT */
@@ -1080,7 +1079,24 @@ section {
 .corner-br{
   bottom:-15px;
   right:-15px;
-  transform:scaleX(-1);
+}
+
+/* ROTATIONS APPLIED TO IMAGE */
+
+.corner-bl img{
+  transform:rotate(0deg);
+}
+
+.corner-br img{
+  transform:rotate(-90deg);
+}
+
+.corner-tr img{
+  transform:rotate(180deg);
+}
+
+.corner-tl img{
+  transform:rotate(90deg);
 }
 
 /* MOBILE */
