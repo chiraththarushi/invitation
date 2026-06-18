@@ -1033,3 +1033,70 @@ section {
   }
 
 }
+
+/* ==================================
+   LUXURY HERO ORNAMENTS
+================================== */
+
+.hero,
+.thankyou-section{
+  position:relative;
+}
+
+.hero-ornament{
+
+  position:absolute;
+
+  width:140px;
+
+  opacity:.22;
+
+  pointer-events:none;
+
+  user-select:none;
+
+  z-index:0;
+}
+
+.ornament-svg{
+
+  width:100%;
+
+  height:auto;
+
+  display:block;
+}
+
+.hero-ornament-tl{
+  top:25px;
+  left:25px;
+}
+
+.hero-ornament-tr{
+  top:25px;
+  right:25px;
+  transform:scaleX(-1);
+}
+
+.hero-ornament-bl{
+  bottom:25px;
+  left:25px;
+  transform:scaleY(-1);
+}
+
+.hero-ornament-br{
+  bottom:25px;
+  right:25px;
+  transform:scale(-1);
+}
+
+@media(max-width:768px){
+
+  .hero-ornament{
+    width:90px;
+    opacity:.15;
+  }
+
+}
+
+
