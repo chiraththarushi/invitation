@@ -1040,3 +1040,54 @@ section {
 
   left:120%;
 }
+
+/* ==========================
+   GOLD TOUCH DUST
+========================== */
+
+.gold-dust{
+
+  position:fixed;
+
+  width:8px;
+  height:8px;
+
+  border-radius:50%;
+
+  pointer-events:none;
+
+  z-index:9999;
+
+  background:
+  radial-gradient(
+    circle,
+    #F5EDD6 0%,
+    #E2C98A 40%,
+    #C8A96B 100%
+  );
+
+  box-shadow:
+    0 0 8px rgba(200,169,107,0.8),
+    0 0 14px rgba(200,169,107,0.4);
+
+  animation:
+  goldDustFloat 1.2s ease-out forwards;
+}
+
+@keyframes goldDustFloat{
+
+  0%{
+    opacity:1;
+    transform:
+    translateY(0)
+    scale(1);
+  }
+
+  100%{
+    opacity:0;
+    transform:
+    translateY(-40px)
+    scale(0.2);
+  }
+
+}
