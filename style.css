@@ -1044,7 +1044,7 @@ section {
 }
 
 .ornament-img {
-  width: 140px;
+  width: 40px;
   height: auto;
   display: block;
 }
@@ -1055,5 +1055,5 @@ section {
 .corner-br { bottom: 0; right: 0; }
 
 @media (max-width: 768px) {
-  .ornament-img { width: 85px; }
+  .ornament-img { width: 40px; }
 }
