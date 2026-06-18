@@ -355,3 +355,37 @@ function initReveal() {
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 }
 
+/* ==================================
+   CURSOR GOLD DUST
+================================== */
+
+document.addEventListener('mousemove', e => {
+
+  if(Math.random() > 0.94){
+
+    const sparkle =
+    document.createElement('div');
+
+    sparkle.className =
+    'cursor-sparkle';
+
+    sparkle.innerHTML = '✦';
+
+    sparkle.style.left =
+    e.clientX + 'px';
+
+    sparkle.style.top =
+    e.clientY + 'px';
+
+    document.body.appendChild(
+      sparkle
+    );
+
+    setTimeout(() => {
+
+      sparkle.remove();
+
+    }, 2000);
+  }
+
+});
