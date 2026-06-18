@@ -1130,3 +1130,8 @@ section {
     .corner-bl{ bottom:-10px; left:-10px; }
     .corner-br{ bottom:-10px; right:-10px; }
 }
+
+.ornament-img{
+    width:120px;
+    border:2px solid red;
+}
