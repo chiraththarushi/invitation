@@ -578,6 +578,8 @@ section {
 
 .venue-btn {
   display:inline-flex; align-items:center; gap:10px;
+  position:relative; 
+  overflow:hidden;
   background:linear-gradient(135deg,var(--gold-deep) 0%,var(--gold) 50%,var(--gold-deep) 100%);
   background-size:200% 100%; color:#fff;
   font-family:'Cinzel',serif; font-size:clamp(9px,2.5vw,11px);
@@ -753,6 +755,8 @@ section {
 }
 .submit-btn {
   width:100%; padding:18px;
+  position:relative;
+  overflow:hidden; 
   background:linear-gradient(135deg,var(--charcoal) 0%,#3e3025 50%,var(--charcoal) 100%);
   background-size:200% 100%; color:var(--gold-light);
   font-family:'Cinzel',serif; font-size:10px; letter-spacing:4px; text-transform:uppercase;
