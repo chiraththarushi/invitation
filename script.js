@@ -389,3 +389,57 @@ document.addEventListener('mousemove', e => {
   }
 
 });
+
+/* ==========================
+   TOUCH GOLD DUST
+========================== */
+
+function createGoldDust(x, y){
+
+  for(let i = 0; i < 5; i++){
+
+    const dust = document.createElement('span');
+
+    dust.className = 'gold-dust';
+
+    dust.style.left =
+      (x + (Math.random()*40 - 20)) + 'px';
+
+    dust.style.top =
+      (y + (Math.random()*40 - 20)) + 'px';
+
+    document.body.appendChild(dust);
+
+    setTimeout(() => {
+      dust.remove();
+    }, 1200);
+
+  }
+}
+
+document.addEventListener('touchstart', e => {
+
+  const touch = e.touches[0];
+
+  createGoldDust(
+    touch.clientX,
+    touch.clientY
+  );
+
+});
+
+document.addEventListener('touchmove', e => {
+
+  const touch = e.touches[0];
+
+  if(Math.random() > 0.75){
+
+    createGoldDust(
+      touch.clientX,
+      touch.clientY
+    );
+
+  }
+
+});
+
