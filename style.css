@@ -1044,7 +1044,7 @@ section {
 
 .corner-ornament{
   position:absolute;
-  width:100px;
+  width:50px;
   opacity:.08;
   pointer-events:none;
   user-select:none;
@@ -1084,7 +1084,7 @@ section {
 }
 
 /* MOBILE */
-@media (max-width:768px){
+@media (max-width:100px){
 
   .corner-ornament{
     width:65px;
