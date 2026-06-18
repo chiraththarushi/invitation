@@ -1036,49 +1036,24 @@ section {
    LUXURY CORNER ORNAMENTS
 ==================================== */
 
-.hero,
-.thankyou-section{
-    position:relative;
-    overflow:hidden;
+.corner-ornament {
+  position: fixed;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0.55;
 }
 
-.corner-ornament{
-    position:absolute;
-    z-index:0;
-    pointer-events:none;
-    opacity:.12;
+.ornament-img {
+  width: 140px;
+  height: auto;
+  display: block;
 }
 
-.ornament-img{
-    width:120px;
-    height:auto;
-    display:block;
-}
+.corner-tl { top: 0; left: 0; }
+.corner-tr { top: 0; right: 0; }
+.corner-bl { bottom: 0; left: 0; }
+.corner-br { bottom: 0; right: 0; }
 
-.corner-tl{
-    top:0;
-    left:0;
-}
-
-.corner-tr{
-    top:0;
-    right:0;
-}
-
-.corner-bl{
-    bottom:0;
-    left:0;
-}
-
-.corner-br{
-    bottom:0;
-    right:0;
-}
-
-@media(max-width:768px){
-
-    .ornament-img{
-        width:70px;
-    }
-
+@media (max-width: 768px) {
+  .ornament-img { width: 85px; }
 }
