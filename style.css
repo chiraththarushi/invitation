@@ -588,6 +588,198 @@ section {
 }
 .venue-btn:active { background-position:100% 0; transform:translateY(-2px); box-shadow:0 10px 36px rgba(166,124,55,0.45); }
 
+/* ==========================================
+   LUXURY VENUE UPGRADE
+========================================== */
+
+.venue-parallax{
+  position:relative;
+  overflow:hidden;
+  border-radius:8px;
+  max-width:680px;
+  margin:0 auto;
+
+  box-shadow:
+  0 8px 40px rgba(200,169,107,0.14);
+
+  border:
+  1px solid rgba(200,169,107,0.22);
+}
+
+/* Smooth zoom */
+
+.parallax-image{
+  width:100%;
+  height:auto;
+  display:block;
+  transform:scale(1.04);
+  transition:
+  transform 0.25s ease-out;
+}
+
+/* Dark luxury overlay */
+
+.venue-overlay{
+  position:absolute;
+  inset:0;
+
+  background:
+  linear-gradient(
+  to top,
+  rgba(0,0,0,0.50),
+  rgba(0,0,0,0.05)
+  );
+
+  z-index:2;
+}
+
+/* Venue name on image */
+
+.venue-title-overlay{
+  position:absolute;
+
+  bottom:30px;
+  left:50%;
+
+  transform:
+  translateX(-50%)
+  translateY(20px);
+
+  text-align:center;
+
+  opacity:0;
+
+  z-index:3;
+
+  transition:
+  all 1.2s ease;
+}
+
+.venue-title-overlay.show{
+  opacity:1;
+
+  transform:
+  translateX(-50%)
+  translateY(0);
+}
+
+.venue-title-overlay h3{
+  margin:0;
+
+  color:white;
+
+  font-family:'Cinzel',serif;
+
+  font-size:clamp(22px,5vw,34px);
+
+  letter-spacing:4px;
+
+  font-weight:500;
+}
+
+.venue-title-overlay p{
+  margin-top:6px;
+
+  color:#E8C983;
+
+  font-family:'Cinzel',serif;
+
+  letter-spacing:3px;
+
+  font-size:11px;
+
+  text-transform:uppercase;
+}
+
+/* ==========================================
+   FLOATING GOLD SPARKLES
+========================================== */
+
+.venue-sparkles{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  z-index:4;
+}
+
+.sparkle{
+  position:absolute;
+
+  color:#f1d28b;
+
+  font-size:18px;
+
+  opacity:0.6;
+
+  text-shadow:
+  0 0 8px rgba(241,210,139,0.8);
+
+  animation:
+  sparkleFloat 6s ease-in-out infinite;
+}
+
+.s1{
+  top:15%;
+  left:12%;
+}
+
+.s2{
+  top:40%;
+  left:25%;
+  animation-delay:1s;
+}
+
+.s3{
+  top:20%;
+  left:50%;
+  animation-delay:2s;
+}
+
+.s4{
+  top:60%;
+  left:70%;
+  animation-delay:3s;
+}
+
+.s5{
+  top:25%;
+  left:82%;
+  animation-delay:4s;
+}
+
+.s6{
+  top:12%;
+  left:65%;
+  animation-delay:5s;
+}
+
+@keyframes sparkleFloat{
+
+  0%{
+    transform:
+    translateY(0px)
+    scale(1);
+
+    opacity:0.2;
+  }
+
+  50%{
+    transform:
+    translateY(-15px)
+    scale(1.4);
+
+    opacity:1;
+  }
+
+  100%{
+    transform:
+    translateY(0px)
+    scale(1);
+
+    opacity:0.2;
+  }
+}
+
 /* ─── RSVP ─── */
 .rsvp-section { background:var(--soft-white); max-width:100%; padding:72px 24px; }
 .rsvp-inner { max-width:600px; margin:0 auto; }
