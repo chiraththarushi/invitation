@@ -988,3 +988,51 @@ section {
     scale(2);
   }
 }
+
+/* ==================================
+   BUTTON HOVER EFFECTS
+================================== */
+
+.venue-btn:hover,
+.submit-btn:hover{
+
+  transform:translateY(-3px);
+
+  box-shadow:
+  0 12px 35px
+  rgba(166,124,55,.35);
+
+}
+
+.venue-btn::after,
+.submit-btn::after{
+
+  content:'';
+
+  position:absolute;
+
+  top:0;
+
+  left:-120%;
+
+  width:60%;
+
+  height:100%;
+
+  background:
+
+  linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,.35),
+    transparent
+  );
+
+  transition:.8s;
+}
+
+.venue-btn:hover::after,
+.submit-btn:hover::after{
+
+  left:120%;
+}
