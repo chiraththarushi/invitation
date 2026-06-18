@@ -894,3 +894,61 @@ section {
 #rsvp-success.show{
     display:block;
 }
+
+/* ==================================
+   LUXURY PAGE CORNERS
+================================== */
+
+.page-corners{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:999;
+}
+
+.page-corner{
+  position:absolute;
+  width:70px;
+  height:70px;
+  opacity:.45;
+}
+
+.page-corner::before,
+.page-corner::after{
+  content:'';
+  position:absolute;
+  background:#C8A96B;
+}
+
+.page-corner::before{
+  width:70px;
+  height:1px;
+}
+
+.page-corner::after{
+  width:1px;
+  height:70px;
+}
+
+.top-left{
+  top:20px;
+  left:20px;
+}
+
+.top-right{
+  top:20px;
+  right:20px;
+  transform:scaleX(-1);
+}
+
+.bottom-left{
+  bottom:20px;
+  left:20px;
+  transform:scaleY(-1);
+}
+
+.bottom-right{
+  bottom:20px;
+  right:20px;
+  transform:scale(-1);
+}
