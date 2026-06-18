@@ -1032,10 +1032,6 @@ section {
     scale(0.2);
   }
 
-/* ===================================
-   FIXED PNG ORNAMENTS
-=================================== */
-
 /* ====================================
    LUXURY CORNER ORNAMENTS
 ==================================== */
@@ -1059,7 +1055,7 @@ section {
 
 .ornament-img{
   display:block;
-  width:48px;
+  width:30px;
   height:auto;
 }
 
