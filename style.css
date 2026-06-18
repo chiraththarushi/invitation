@@ -1032,82 +1032,67 @@ section {
     scale(0.2);
   }
 
-/* ==========================
-   LUXURY PNG CORNER ORNAMENTS
-========================== */
-
-.hero,
-.thankyou-section{
-  position:relative;
-  overflow:hidden;
-}
+/* ===================================
+   FIXED PNG ORNAMENTS
+=================================== */
 
 .corner-ornament{
   position:absolute;
-  width:50px;
-  opacity:.08;
-  pointer-events:none;
-  user-select:none;
   z-index:0;
+  opacity:.07;
+  pointer-events:none;
 }
 
-.corner-ornament img{
-  width:100%;
+.ornament-img{
+  width:70px !important;
+  height:auto;
   display:block;
-  transform-origin:center center;
 }
 
 /* TOP LEFT */
 .corner-tl{
-  top:-15px;
-  left:-15px;
+  top:-5px;
+  left:-5px;
+}
+
+.corner-tl .ornament-img{
+  transform:rotate(90deg);
 }
 
 /* TOP RIGHT */
 .corner-tr{
-  top:-15px;
-  right:-15px;
+  top:-5px;
+  right:-5px;
+}
+
+.corner-tr .ornament-img{
+  transform:rotate(180deg);
 }
 
 /* BOTTOM LEFT */
 .corner-bl{
-  bottom:-15px;
-  left:-15px;
+  bottom:-5px;
+  left:-5px;
+}
+
+.corner-bl .ornament-img{
+  transform:rotate(0deg);
 }
 
 /* BOTTOM RIGHT */
 .corner-br{
-  bottom:-15px;
-  right:-15px;
+  bottom:-5px;
+  right:-5px;
 }
 
-/* ROTATIONS APPLIED TO IMAGE */
-
-.corner-bl img{
-  transform:rotate(0deg);
-}
-
-.corner-br img{
+.corner-br .ornament-img{
   transform:rotate(-90deg);
 }
 
-.corner-tr img{
-  transform:rotate(180deg);
-}
+@media(max-width:768px){
 
-.corner-tl img{
-  transform:rotate(90deg);
-}
-
-/* MOBILE */
-@media (max-width:100px){
-
-  .corner-ornament{
-    width:65px;
-    opacity:.06;
+  .ornament-img{
+    width:45px !important;
   }
 
 }
-
-}
-
