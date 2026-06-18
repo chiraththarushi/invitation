@@ -354,3 +354,53 @@ function initReveal() {
   }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 }
+
+/* ==========================
+   VENUE PARALLAX EFFECT
+========================== */
+
+window.addEventListener('scroll', () => {
+
+  const image =
+  document.querySelector('.parallax-image');
+
+  if(!image) return;
+
+  const scrollY =
+  window.scrollY;
+
+  image.style.transform =
+  `scale(${1.05 + scrollY * 0.00008})`;
+
+});
+
+
+/* ==========================
+   VENUE TITLE REVEAL
+========================== */
+
+document.addEventListener('DOMContentLoaded', () => {
+
+  const venueTitle =
+  document.querySelector('.venue-title-overlay');
+
+  if(!venueTitle) return;
+
+  const observer =
+  new IntersectionObserver(entries => {
+
+    entries.forEach(entry => {
+
+      if(entry.isIntersecting){
+
+        venueTitle.classList.add('show');
+
+      }
+
+    });
+
+  }, {threshold:0.35});
+
+  observer.observe(venueTitle);
+
+});
