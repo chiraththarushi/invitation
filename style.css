@@ -1033,7 +1033,7 @@ section {
   }
 
 /* ==========================
-   PNG LUXURY ORNAMENTS
+   LUXURY PNG CORNER ORNAMENTS
 ========================== */
 
 .hero,
@@ -1044,11 +1044,11 @@ section {
 
 .corner-ornament{
   position:absolute;
-  width:220px;
+  width:100px;
+  opacity:.08;
   pointer-events:none;
   user-select:none;
   z-index:0;
-  opacity:.12;
 }
 
 .corner-ornament img{
@@ -1056,31 +1056,41 @@ section {
   display:block;
 }
 
-/* Top Left */
+/* TOP LEFT */
 .corner-tl{
-  top:-10px;
-  left:-10px;
-  transform:rotate(180deg);
-}
-
-/* Top Right */
-.corner-tr{
-  top:-10px;
-  right:-10px;
+  top:-15px;
+  left:-15px;
   transform:scaleY(-1);
 }
 
-/* Bottom Left */
-.corner-bl{
-  bottom:-10px;
-  left:-10px;
+/* TOP RIGHT */
+.corner-tr{
+  top:-15px;
+  right:-15px;
+  transform:rotate(180deg);
 }
 
-/* Bottom Right */
+/* BOTTOM LEFT */
+.corner-bl{
+  bottom:-15px;
+  left:-15px;
+}
+
+/* BOTTOM RIGHT */
 .corner-br{
-  bottom:-10px;
-  right:-10px;
+  bottom:-15px;
+  right:-15px;
   transform:scaleX(-1);
+}
+
+/* MOBILE */
+@media (max-width:768px){
+
+  .corner-ornament{
+    width:65px;
+    opacity:.06;
+  }
+
 }
 
 }
