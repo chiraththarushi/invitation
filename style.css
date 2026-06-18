@@ -1036,64 +1036,83 @@ section {
    FIXED PNG ORNAMENTS
 =================================== */
 
+/* ====================================
+   LUXURY CORNER ORNAMENTS
+==================================== */
+
+.hero,
+.thankyou-section{
+  position:relative;
+  overflow:hidden;
+}
+
+/* Ornament container */
+
 .corner-ornament{
   position:absolute;
   z-index:0;
   pointer-events:none;
-  opacity:.06;
+  opacity:.05;
 }
+
+/* Ornament image */
 
 .ornament-img{
   display:block;
-  width:55px !important;
+  width:48px;
   height:auto;
-  transform-origin:center center;
 }
 
-/* Top Left */
+/* ---------- TOP LEFT ---------- */
+
 .corner-tl{
-  top:-10px;
-  left:-10px;
+  top:-8px;
+  left:-8px;
 }
 
 .corner-tl .ornament-img{
   transform:rotate(90deg);
 }
 
-/* Top Right */
+/* ---------- TOP RIGHT ---------- */
+
 .corner-tr{
-  top:-10px;
-  right:-10px;
+  top:-8px;
+  right:-8px;
 }
 
 .corner-tr .ornament-img{
   transform:rotate(180deg);
 }
 
-/* Bottom Left */
+/* ---------- BOTTOM LEFT ---------- */
+
 .corner-bl{
-  bottom:-10px;
-  left:-10px;
+  bottom:-8px;
+  left:-8px;
 }
 
 .corner-bl .ornament-img{
   transform:rotate(0deg);
 }
 
-/* Bottom Right */
+/* ---------- BOTTOM RIGHT ---------- */
+
 .corner-br{
-  bottom:-10px;
-  right:-10px;
+  bottom:-8px;
+  right:-8px;
 }
 
 .corner-br .ornament-img{
   transform:rotate(-90deg);
 }
 
+/* Mobile */
+
 @media (max-width:768px){
 
   .ornament-img{
-    width:38px !important;
+    width:32px;
   }
 
 }
