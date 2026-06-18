@@ -588,6 +588,14 @@ section {
 }
 .venue-btn:active { background-position:100% 0; transform:translateY(-2px); box-shadow:0 10px 36px rgba(166,124,55,0.45); }
 
+#venue{
+  text-align:center;
+}
+
+#venue .reveal{
+  text-align:center;
+}
+
 /* ==================================
    LUXURY VENUE DECORATIONS
 ================================== */
