@@ -361,7 +361,7 @@ function initReveal() {
 
 document.addEventListener('mousemove', e => {
 
-  if(Math.random() > 0.94){
+  if(Math.random() > 0.5){
 
     const sparkle =
     document.createElement('div');
