@@ -1096,14 +1096,13 @@ section {
   display: block;
   pointer-events: none;
   margin-bottom: -10px;
-  background: #F5F0E8; /* matches image background so no white gap shows */
-  padding: 10px 0;
 }
 
 .top-ornament img {
-  width: min(480px, 95vw); /* wide because the image itself is very wide */
+  width: min(480px, 95vw);
   height: auto;
   display: inline-block;
+  mix-blend-mode: multiply;
 }
 
 .bottom-ornament {
@@ -1112,14 +1111,13 @@ section {
   display: block;
   pointer-events: none;
   margin-top: -10px;
-  background: #F5F0E8; /* matches image background */
-  padding: 10px 0;
 }
 
 .bottom-ornament img {
   width: min(420px, 90vw);
   height: auto;
   display: inline-block;
+  mix-blend-mode: multiply;
 }
 
 @media (max-width: 480px) {
