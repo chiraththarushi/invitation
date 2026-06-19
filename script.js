@@ -441,58 +441,47 @@ document.addEventListener('touchmove', e => {
     );
 
   }
+   
+});
 
-/* ====================================
-   FLOATING LUXURY HEARTS
-==================================== */
+/* ==================================
+   FLOATING HEARTS
+================================== */
 
 function createFloatingHeart(){
 
-    const heart = document.createElement("div");
+    const heart =
+    document.createElement('div');
 
-    heart.classList.add("floating-heart");
+    heart.className =
+    'heart-float';
 
-    heart.innerHTML =
-        Math.random() > 0.5 ? "♥" : "♡";
+    heart.innerHTML = '♡';
 
     heart.style.left =
-        Math.random() * window.innerWidth + "px";
+    (Math.random() * 90 + 5) + 'vw';
+
+    heart.style.top =
+    (window.innerHeight + 50) + 'px';
 
     heart.style.fontSize =
-        (12 + Math.random()*14) + "px";
+    (14 + Math.random()*12) + 'px';
 
-    heart.style.color =
-        Math.random() > 0.5
-        ? "#D4AF37"
-        : "#E6C8A0";
-
-    heart.style.textShadow =
-        "0 0 10px rgba(212,175,55,.25)";
-
-    heart.style.setProperty(
-        "--drift",
-        (Math.random()*180 - 90) + "px"
+    document.body.appendChild(
+        heart
     );
-
-    heart.style.animationDuration =
-        (12 + Math.random()*8) + "s";
-
-    document.body.appendChild(heart);
 
     setTimeout(()=>{
         heart.remove();
-    },20000);
+    },12000);
 }
 
-/* Create hearts */
+setInterval(()=>{
 
-setInterval(() => {
+    if(document.getElementById('main-content')
+       .classList.contains('visible')){
 
-    if(document.visibilityState === "visible"){
         createFloatingHeart();
     }
 
 },2500);
-   
-});
-
