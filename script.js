@@ -445,60 +445,44 @@ document.addEventListener('touchmove', e => {
 });
 
 /* ==========================
-   GOLD HEART EFFECT
+   FLOATING GOLD HEARTS
 ========================== */
 
-function createGoldHeart(x,y){
+function createFloatingHeart(){
 
   const heart = document.createElement('div');
 
-  heart.className = 'gold-heart';
+  heart.className = 'floating-heart';
 
-  heart.innerHTML = '♡';
+  heart.innerHTML =
+    Math.random() > 0.5 ? '♡' : '♥';
 
-  heart.style.left = x + 'px';
+  heart.style.left =
+    (Math.random() * window.innerWidth) + 'px';
 
-  heart.style.top = y + 'px';
+  heart.style.bottom = '-20px';
 
   heart.style.fontSize =
-    (10 + Math.random()*8) + 'px';
+    (12 + Math.random()*10) + 'px';
+
+  heart.style.animationDuration =
+    (8 + Math.random()*5) + 's';
 
   document.body.appendChild(heart);
 
   setTimeout(()=>{
     heart.remove();
-  },2500);
-
+  },13000);
 }
 
-/* Desktop */
+/* create a heart occasionally */
 
-document.addEventListener('mousemove', e => {
+setInterval(()=>{
 
-  if(Math.random() > 0.95){
+  if(Math.random() > 0.55){
 
-    createGoldHeart(
-      e.clientX,
-      e.clientY
-    );
+    createFloatingHeart();
 
   }
 
-});
-
-/* Mobile */
-
-document.addEventListener('touchmove', e => {
-
-  const touch = e.touches[0];
-
-  if(Math.random() > 0.92){
-
-    createGoldHeart(
-      touch.clientX,
-      touch.clientY
-    );
-
-  }
-
-},{passive:true});
+},2500);
