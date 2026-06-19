@@ -468,6 +468,94 @@ section {
 
 }
 
+
+
+/* ─── PHOTOS SECTION ─── */
+.photos-section {
+  padding:60px 24px 80px; background:var(--soft-white);
+  text-align:center; position:relative; overflow:hidden;
+  border-top:1px solid rgba(200,169,107,0.1);
+  border-bottom:1px solid rgba(200,169,107,0.1);
+}
+.photos-section::before {
+  content:''; position:absolute; inset:0;
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(200,169,107,0.04) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 50%, rgba(200,169,107,0.04) 0%, transparent 50%);
+  pointer-events:none;
+}
+.section-botanical-divider { width:min(420px,90vw); margin:0 auto 10px; display:block; }
+.photos-subtitle {
+  font-family:'Cormorant Garamond',serif; font-style:italic;
+  font-size:clamp(14px,3.5vw,18px); color:var(--charcoal-light);
+  margin:0 auto 44px; max-width:380px; line-height:1.7; display:block;
+}
+.photos-grid {
+  display:grid; grid-template-columns:1fr 1.5fr 1fr;
+  gap:16px; max-width:860px; margin:0 auto; align-items:start;
+}
+@media(max-width:600px){
+  .photos-grid{ grid-template-columns:1fr 1fr; gap:12px; }
+  .photo-card-landscape{ grid-column:1/-1; }
+}
+@media(max-width:380px){ .photos-grid{ grid-template-columns:1fr; } .photo-card-landscape{ grid-column:1; } }
+
+.photo-card { position:relative; }
+.photo-wrap {
+  position:relative; overflow:hidden;
+  border:1px solid rgba(200,169,107,0.25);
+  box-shadow:0 6px 28px rgba(166,124,55,0.12),0 2px 8px rgba(0,0,0,0.06);
+  background:var(--ivory); transition:box-shadow 0.4s ease,transform 0.4s ease;
+}
+.photo-wrap::before {
+  content:''; position:absolute; top:8px; left:8px;
+  width:22px; height:22px;
+  border-top:1px solid rgba(200,169,107,0.6); border-left:1px solid rgba(200,169,107,0.6);
+  z-index:3; pointer-events:none;
+}
+.photo-wrap::after {
+  content:''; position:absolute; bottom:8px; right:8px;
+  width:22px; height:22px;
+  border-bottom:1px solid rgba(200,169,107,0.6); border-right:1px solid rgba(200,169,107,0.6);
+  z-index:3; pointer-events:none;
+}
+.photo-card:hover .photo-wrap { transform:translateY(-4px); box-shadow:0 16px 48px rgba(166,124,55,0.2),0 4px 12px rgba(0,0,0,0.1); }
+.photo-card-portrait .photo-wrap { aspect-ratio:3/4; }
+.photo-card-landscape .photo-wrap { aspect-ratio:4/3; }
+.couple-photo {
+  width:100%; height:100%; object-fit:cover; display:block;
+  transition:transform 0.6s ease;
+  filter:sepia(8%) saturate(0.95) brightness(1.02);
+}
+.photo-card:hover .couple-photo { transform:scale(1.04); }
+.photo-overlay {
+  position:absolute; inset:0;
+  background:linear-gradient(to top,rgba(43,30,10,0.55) 0%,rgba(43,30,10,0.1) 50%,transparent 100%);
+  opacity:0; transition:opacity 0.4s ease;
+  display:flex; align-items:flex-end; justify-content:center;
+  padding-bottom:18px; z-index:2;
+}
+.photo-card:hover .photo-overlay { opacity:1; }
+.photo-overlay-text { font-family:'Great Vibes',cursive; font-size:26px; color:rgba(255,235,160,0.9); letter-spacing:1px; }
+.photo-placeholder {
+  background:linear-gradient(135deg,#F5F0E8 0%,#EDE5D0 50%,#F2EAD8 100%) !important;
+  min-height:180px;
+}
+.photo-placeholder img { display:none !important; }
+.photo-placeholder::before {
+  content:''; position:absolute; inset:0;
+  background-image:linear-gradient(rgba(200,169,107,0.08) 1px,transparent 1px),linear-gradient(90deg,rgba(200,169,107,0.08) 1px,transparent 1px);
+  background-size:20px 20px;
+}
+.photo-placeholder .photo-overlay { opacity:1 !important; background:none; align-items:center; padding-bottom:0; }
+.photo-placeholder .photo-overlay-text { font-size:18px; color:rgba(166,124,55,0.5); }
+.photo-caption-wrap { margin-top:10px; text-align:center; }
+.photo-caption {
+  font-family:'Cormorant Garamond',serif; font-style:italic;
+  font-size:clamp(13px,3vw,15px); color:var(--charcoal-light); letter-spacing:0.5px; display:block; position:relative;
+}
+.photo-caption::before,.photo-caption::after { content:'—'; color:var(--gold); opacity:0.5; margin:0 6px; font-style:normal; font-size:11px; }
+
 /* ─── COUNTDOWN ─── */
 #countdown-section {
   text-align:center; position:relative; overflow:hidden; padding:80px 24px;
