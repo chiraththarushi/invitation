@@ -784,7 +784,7 @@ section {
 /* RSVP intro text — darker */
 .rsvp-intro {
   font-family:'Cormorant Garamond',serif; font-style:italic;
-  font-size:clamp(15px,4vw,18px);
+  font-size:clamp(15px,4vw,18px); font-weight:600;
   color:var(--charcoal-mid); /* darker than charcoal-light */
   margin-top:8px; text-align:center; line-height:1.7; display:block;
 }
