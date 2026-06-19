@@ -443,3 +443,44 @@ document.addEventListener('touchmove', e => {
 
 });
 
+/* ══════════════════════════════════
+   7. FLOATING ROSE GOLD HEARTS
+══════════════════════════════════ */
+const heartSymbols = ['♥', '♡', '❤', '💕'];
+
+function spawnHeart() {
+  const heart = document.createElement('div');
+  heart.className = 'floating-heart';
+
+  // random symbol
+  heart.innerHTML = heartSymbols[Math.floor(Math.random() * heartSymbols.length)];
+
+  // random horizontal position
+  heart.style.left = (Math.random() * 90 + 5) + 'vw';
+
+  // random size — small to medium
+  const size = Math.random() * 18 + 12;
+  heart.style.fontSize = size + 'px';
+
+  // random duration — slow and dreamy like bubbles
+  const duration = Math.random() * 5 + 6;
+  heart.style.animationDuration = duration + 's';
+
+  // random slight horizontal drift
+  heart.style.setProperty('--drift', (Math.random() * 60 - 30) + 'px');
+
+  document.body.appendChild(heart);
+
+  // remove after animation ends
+  setTimeout(() => heart.remove(), duration * 1000);
+}
+
+// only start spawning after envelope is opened
+function startHearts() {
+  // spawn one every 1.2 seconds
+  setInterval(spawnHeart, 1200);
+  // spawn a few immediately so it doesn't feel empty at first
+  setTimeout(spawnHeart, 100);
+  setTimeout(spawnHeart, 400);
+  setTimeout(spawnHeart, 800);
+}
