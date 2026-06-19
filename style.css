@@ -299,28 +299,28 @@ body {
 /* "Wedding Invitation" — bigger (was 9-11px, now 12-14px) */
 .hero-eyebrow {
   font-family:'Cinzel',serif;
-  font-size:clamp(15px,3vw,14px);
+  font-size:clamp(12px,3vw,14px);
   letter-spacing:5px; color:var(--gold-deep);
-  text-transform:uppercase; margin-bottom:18px; opacity:0.9;
+  text-transform:uppercase; margin-bottom:18px; opacity:0.95;
 }
 
 /* Section eyebrows — base */
 .section-eyebrow {
   font-family:'Cinzel',serif;
-  font-size:clamp(15px,8vw,20px);
-  letter-spacing:5px; text-transform:uppercase; font-weight:300;
+  font-size:clamp(10px,2vw,10px);
+  letter-spacing:5px; text-transform:uppercase; font-weight:100;
   color:var(--gold-deep); display:block; margin-bottom:10px;
 }
 
 /* Slightly bigger eyebrow variant (used on key sections) */
 .section-eyebrow-lg {
-  font-size:clamp(15px,10vw,100px); font-weight:300;
+  font-size:clamp(15px,3vw,20px); font-weight:100;
   letter-spacing:4px;
 }
 
 /* Darker eyebrow variant (RSVP, Contact, With Love) */
 .section-eyebrow-dark {
-  color:var(--gold-deep); font-weight:600;
+  color:var(--gold-deep); 
   opacity:1;
 }
 
