@@ -1032,23 +1032,26 @@ section {
     scale(0.2);
   }
 
-/* ====================================
-   FLOATING GOLD HEARTS
-==================================== */
+/* ==================================
+   FLOATING ROSE GOLD HEARTS
+================================== */
 
-.floating-heart{
+.heart-float{
     position:fixed;
-    bottom:-60px;
     left:0;
+    top:0;
+
+    color:#D4AF37;
+
+    font-size:18px;
 
     pointer-events:none;
-    user-select:none;
 
-    z-index:9999;
+    z-index:3;
 
     opacity:0;
 
-    animation:heartFloat linear forwards;
+    animation:heartFloat 12s linear forwards;
 }
 
 @keyframes heartFloat{
@@ -1056,27 +1059,22 @@ section {
     0%{
         opacity:0;
         transform:
-            translateY(0)
-            translateX(0)
-            scale(0.6)
-            rotate(0deg);
+        translateY(0)
+        scale(.6);
     }
 
     10%{
-        opacity:0.7;
+        opacity:.28;
     }
 
     90%{
-        opacity:0.7;
+        opacity:.12;
     }
 
     100%{
         opacity:0;
-
         transform:
-            translateY(-130vh)
-            translateX(var(--drift))
-            scale(1.2)
-            rotate(15deg);
+        translateY(-120vh)
+        scale(1.3);
     }
 }
