@@ -164,6 +164,7 @@ function openEnvelope() {
     startMusic();
 
     initReveal();
+    startHearts();
   }, 2800);
 }
 
