@@ -313,9 +313,12 @@ body {
 }
 
 /* Slightly bigger eyebrow variant (used on key sections) */
-.section-eyebrow-lg {
-  font-size:clamp(15px,3vw,13px);
-  letter-spacing:4px;
+.section-eyebrow-lg{
+    font-size: clamp(11px, 2.5vw, 13px);
+    letter-spacing: 6px;
+    color: #b58a3a; /* darker gold */
+    font-weight: 500;
+    text-shadow: 0 1px 3px rgba(255,255,255,0.7);
 }
 
 /* Darker eyebrow variant (RSVP, Contact, With Love) */
@@ -436,7 +439,11 @@ section {
   font-family:'Cormorant Garamond',serif; font-style:italic;
   font-size:13px; color:var(--charcoal-light); margin-top:4px;
 }
-
+.section-title{
+    font-size: clamp(32px, 7vw, 46px);
+    color:#3e3026;
+    text-shadow:0 2px 6px rgba(255,255,255,0.7);
+}
 /* ====================================
    WEDDING DETAILS BACKGROUND
 ==================================== */
