@@ -159,7 +159,7 @@ body {
 
 .opening-tagline {
   font-family:'Cormorant Garamond',serif; font-style:italic;
-  font-size:clamp(14px,3.8vw,18px); color:var(--charcoal-mid);
+  font-size:clamp(14px,3.8vw,18px); font-weight:600; color:var(--charcoal-mid);
   text-align:center; max-width:280px; line-height:1.7; opacity:0.75; margin-top:6px;
 }
 
@@ -309,12 +309,12 @@ body {
   font-family:'Cinzel',serif;
   font-size:clamp(8px,2vw,10px);
   letter-spacing:5px; text-transform:uppercase; font-weight:600;
-  color:var(--gold); display:block; margin-bottom:10px;
+  color:var(--gold-deep); display:block; margin-bottom:10px;
 }
 
 /* Slightly bigger eyebrow variant (used on key sections) */
 .section-eyebrow-lg {
-  font-size:clamp(15px,2.8vw,13px); font-weight:600;
+  font-size:clamp(30px,10vw,100px); font-weight:300;
   letter-spacing:4px;
 }
 
