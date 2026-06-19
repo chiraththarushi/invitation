@@ -1032,56 +1032,47 @@ section {
     scale(0.2);
   }
 
-/* ====================================
-   FLOATING GOLD HEARTS
-==================================== */
-
 .floating-heart{
 
-  position:fixed;
+    position:fixed;
 
-  color:#D4AF37;
+    left:0;
+    bottom:-30px;
 
-  z-index:2;
+    color:#D4AF37;
 
-  pointer-events:none;
+    font-size:18px;
 
-  opacity:0;
+    pointer-events:none;
 
-  text-shadow:
-    0 0 8px rgba(212,175,55,.35);
+    z-index:5;
 
-  animation:
-    floatHeart linear forwards;
+    opacity:0;
+
+    animation: floatHeart 10s linear forwards;
 }
 
 @keyframes floatHeart{
 
-  0%{
-    transform:
-      translateY(0)
-      translateX(0)
-      scale(.7);
+    0%{
+        opacity:0;
+        transform:
+            translateY(0)
+            translateX(0)
+            scale(.7);
+    }
 
-    opacity:0;
-  }
+    10%{
+        opacity:.6;
+    }
 
-  10%{
-    opacity:.5;
-  }
+    100%{
 
-  100%{
+        opacity:0;
 
-    transform:
-      translateY(-110vh)
-      translateX(
-        calc(
-          (var(--drift, 0) * 1px)
-        )
-      )
-      scale(1.2);
-
-    opacity:0;
-  }
-
+        transform:
+            translateY(-120vh)
+            translateX(var(--drift))
+            scale(1.3);
+    }
 }
