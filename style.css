@@ -438,43 +438,58 @@ section {
 }
 
 /* ====================================
-   DETAILS BACKGROUND IMAGE
+   WEDDING DETAILS BACKGROUND
 ==================================== */
 
 #details{
     position:relative;
     overflow:hidden;
+
+    padding:80px 24px;
 }
 
-/* Background Image */
+/* Full width background */
 
 .details-bg-image{
     position:absolute;
 
     top:0;
     left:0;
+    right:0;
+    bottom:0;
 
-    width:100%;
-    height:100%;
+    background:
+      linear-gradient(
+        rgba(255,255,255,0.62),
+        rgba(255,255,255,0.62)
+      ),
+      url('details-bg.jpeg');
 
-    background:url('details-bg.jpeg') center center / cover no-repeat;
+    background-size:cover;
 
-    opacity:0.5;
+    background-position:center center;
 
-    filter:blur(1px);
-
-    transform:scale(1.12);
+    background-repeat:no-repeat;
 
     z-index:0;
 }
 
-/* Content Layer */
+/* Content above image */
 
 .details-content{
     position:relative;
     z-index:1;
 }
 
+/* Mobile */
+
+@media(max-width:768px){
+
+    #details{
+        padding:60px 20px;
+    }
+
+}
 /* ─── PHOTOS SECTION ─── */
 .photos-section {
   padding:60px 24px 80px; background:var(--soft-white);
