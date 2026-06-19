@@ -1032,95 +1032,27 @@ section {
     scale(0.2);
   }
 
-/* ====================================
-   TOP & BOTTOM ORNAMENTS
-==================================== */
-
-.top-ornament,
-.bottom-ornament{
-    width:100%;
-    text-align:center;
-    pointer-events:none;
-}
-
-/* TOP */
-
-.top-ornament{
-    margin-bottom:30px;
-}
-
-.top-ornament img{
-    display:block;
-    margin:auto;
-    width:min(900px,95vw);
-    height:auto;
-}
-
-/* BOTTOM */
-
-.bottom-ornament{
-    margin-top:40px;
-}
-
-.bottom-ornament img{
-    display:block;
-    margin:auto;
-    width:min(450px,75vw);
-    height:auto;
-}
-
-@media (max-width:768px){
-
-    .top-ornament{
-        margin-bottom:20px;
-    }
-
-    .bottom-ornament{
-        margin-top:25px;
-    }
-
-    .top-ornament img{
-        width:100%;
-        max-width:500px;
-    }
-
-    .bottom-ornament img{
-        width:80%;
-        max-width:280px;
-    }
-
-/* ── TOP & BOTTOM ORNAMENTS ── */
-.top-ornament {
-  width: 100%;
-  text-align: center;
-  display: block;
+/* ── FLOATING HEARTS ── */
+.floating-heart {
+  position: fixed;
+  bottom: -60px;
   pointer-events: none;
-  margin-bottom: -10px;
+  z-index: 999;
+  font-size: 20px;
+  animation: floatHeart linear forwards;
+  opacity: 0;
+  color: transparent;
+  background: linear-gradient(135deg, #E8A598, #C8796B, #E8C4B8, #D4956A);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 0 4px rgba(210, 120, 100, 0.4));
 }
 
-.top-ornament img {
-  width: min(280px, 75vw);
-  height: auto;
-  display: inline-block;
-  mix-blend-mode: multiply;
-}
-
-.bottom-ornament {
-  width: 100%;
-  text-align: center;
-  display: block;
-  pointer-events: none;
-  margin-top: -10px;
-}
-
-.bottom-ornament img {
-  width: min(220px, 90vw);
-  height: auto;
-  display: inline-block;
-  mix-blend-mode: multiply;
-}
-
-@media (max-width: 280px) {
-  .top-ornament img  { width: 70vw; }
-  .bottom-ornament img { width: 70vw; }
+@keyframes floatHeart {
+  0%   { transform: translateY(0)   rotate(-10deg) scale(0.8); opacity: 0;   }
+  10%  { opacity: 0.85; }
+  50%  { transform: translateY(-45vh) rotate(10deg)  scale(1.1); opacity: 0.7; }
+  80%  { opacity: 0.4; }
+  100% { transform: translateY(-100vh) rotate(-5deg) scale(0.6); opacity: 0;   }
 }
