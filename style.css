@@ -1114,13 +1114,13 @@ section {
 }
 
 .bottom-ornament img {
-  width: min(420px, 90vw);
+  width: min(220px, 90vw);
   height: auto;
   display: inline-block;
   mix-blend-mode: multiply;
 }
 
-@media (max-width: 480px) {
-  .top-ornament img  { width: 95vw; }
-  .bottom-ornament img { width: 90vw; }
+@media (max-width: 280px) {
+  .top-ornament img  { width: 70vw; }
+  .bottom-ornament img { width: 70vw; }
 }
