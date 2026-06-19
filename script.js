@@ -447,41 +447,40 @@ document.addEventListener('touchmove', e => {
 /* ══════════════════════════════════
    7. FLOATING ROSE GOLD HEARTS
 ══════════════════════════════════ */
-const heartSymbols = ['♥', '♡', '❤', '💕'];
+const heartSymbols = ['♥', '♡'];
+const heartColours = ['#C8796B', '#D4956A', '#E8A598', '#C8A96B', '#D4845A'];
 
 function spawnHeart() {
-  const heart = document.createElement('div');
+  const heart = document.createElement('span');
   heart.className = 'floating-heart';
 
-  // random symbol
+  // only ♥ and ♡ — reliable on all phones
   heart.innerHTML = heartSymbols[Math.floor(Math.random() * heartSymbols.length)];
 
-  // random horizontal position
-  heart.style.left = (Math.random() * 90 + 5) + 'vw';
+  // rose gold colour variants
+  heart.style.color = heartColours[Math.floor(Math.random() * heartColours.length)];
 
-  // random size — small to medium
-  const size = Math.random() * 18 + 12;
+  // random horizontal start position
+  heart.style.left = (Math.random() * 88 + 4) + 'vw';
+
+  // random size — small to medium, never too big
+  const size = Math.random() * 14 + 10;
   heart.style.fontSize = size + 'px';
 
-  // random duration — slow and dreamy like bubbles
-  const duration = Math.random() * 5 + 6;
+  // slow dreamy duration like soap bubbles
+  const duration = Math.random() * 4 + 7;
   heart.style.animationDuration = duration + 's';
-
-  // random slight horizontal drift
-  heart.style.setProperty('--drift', (Math.random() * 60 - 30) + 'px');
 
   document.body.appendChild(heart);
 
-  // remove after animation ends
+  // clean up after animation
   setTimeout(() => heart.remove(), duration * 1000);
 }
 
-// only start spawning after envelope is opened
 function startHearts() {
-  // spawn one every 1.2 seconds
-  setInterval(spawnHeart, 1200);
-  // spawn a few immediately so it doesn't feel empty at first
-  setTimeout(spawnHeart, 100);
-  setTimeout(spawnHeart, 400);
-  setTimeout(spawnHeart, 800);
+  // gentle pace — one every 2.5 seconds
+  setInterval(spawnHeart, 2500);
+  // two hearts appear immediately so it doesn't feel empty
+  setTimeout(spawnHeart, 300);
+  setTimeout(spawnHeart, 1200);
 }
