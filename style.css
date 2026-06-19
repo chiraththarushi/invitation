@@ -1099,7 +1099,7 @@ section {
 }
 
 .top-ornament img {
-  width: min(480px, 95vw);
+  width: min(280px, 75vw);
   height: auto;
   display: inline-block;
   mix-blend-mode: multiply;
