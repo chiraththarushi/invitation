@@ -299,7 +299,7 @@ body {
 /* "Wedding Invitation" — bigger (was 9-11px, now 12-14px) */
 .hero-eyebrow {
   font-family:'Cinzel',serif;
-  font-size:clamp(40px,3vw,14px);
+  font-size:clamp(30px,3vw,14px);
   letter-spacing:5px; color:var(--gold-deep);
   text-transform:uppercase; margin-bottom:18px; opacity:0.9;
 }
@@ -307,8 +307,8 @@ body {
 /* Section eyebrows — base */
 .section-eyebrow {
   font-family:'Cinzel',serif;
-  font-size:clamp(30px,10vw,100px);
-  letter-spacing:5px; text-transform:uppercase; font-weight:600;
+  font-size:clamp(15px,8vw,30px);
+  letter-spacing:5px; text-transform:uppercase; font-weight:300;
   color:var(--gold-deep); display:block; margin-bottom:10px;
 }
 
