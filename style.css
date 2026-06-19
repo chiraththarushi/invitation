@@ -1095,14 +1095,15 @@ section {
   text-align: center;
   display: block;
   pointer-events: none;
-  margin-bottom: -20px;
+  margin-bottom: -10px;
+  background: #F5F0E8; /* matches image background so no white gap shows */
+  padding: 10px 0;
 }
 
 .top-ornament img {
-  width: min(320px, 80vw);
+  width: min(480px, 95vw); /* wide because the image itself is very wide */
   height: auto;
   display: inline-block;
-  opacity: 0.75;
 }
 
 .bottom-ornament {
@@ -1110,19 +1111,18 @@ section {
   text-align: center;
   display: block;
   pointer-events: none;
-  margin-top: -20px;
+  margin-top: -10px;
+  background: #F5F0E8; /* matches image background */
+  padding: 10px 0;
 }
 
 .bottom-ornament img {
-  width: min(320px, 80vw);
+  width: min(420px, 90vw);
   height: auto;
   display: inline-block;
-  opacity: 0.75;
 }
 
 @media (max-width: 480px) {
-  .top-ornament img,
-  .bottom-ornament img {
-    width: min(260px, 88vw);
-  }
+  .top-ornament img  { width: 95vw; }
+  .bottom-ornament img { width: 90vw; }
 }
