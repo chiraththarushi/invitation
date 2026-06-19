@@ -442,47 +442,51 @@ document.addEventListener('touchmove', e => {
 
   }
 
-});
-
-/* ==========================
-   FLOATING GOLD HEARTS
-========================== */
-
 function createFloatingHeart(){
 
-  const heart = document.createElement('div');
+    const heart =
+    document.createElement('div');
 
-  heart.className = 'floating-heart';
+    heart.className =
+    'floating-heart';
 
-  heart.innerHTML =
+    heart.innerHTML =
     Math.random() > 0.5 ? '♡' : '♥';
 
-  heart.style.left =
-    (Math.random() * window.innerWidth) + 'px';
+    heart.style.left =
+    Math.random() * 100 + 'vw';
 
-  heart.style.bottom = '-20px';
+    heart.style.setProperty(
+      '--drift',
+      (Math.random()*200 - 100) + 'px'
+    );
 
-  heart.style.fontSize =
-    (12 + Math.random()*10) + 'px';
+    heart.style.fontSize =
+    (14 + Math.random()*10) + 'px';
 
-  heart.style.animationDuration =
+    heart.style.animationDuration =
     (8 + Math.random()*5) + 's';
 
-  document.body.appendChild(heart);
+    document.body.appendChild(heart);
 
-  setTimeout(()=>{
-    heart.remove();
-  },13000);
+    setTimeout(()=>{
+        heart.remove();
+    },13000);
 }
 
-/* create a heart occasionally */
+/* Create only a few hearts */
 
 setInterval(()=>{
 
-  if(Math.random() > 0.55){
+    if(document.hidden) return;
 
-    createFloatingHeart();
+    if(Math.random() > 0.45){
 
-  }
+        createFloatingHeart();
 
-},2500);
+    }
+
+},2200);
+   
+});
+
