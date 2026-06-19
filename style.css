@@ -607,13 +607,13 @@ section {
 }
 .countdown-number {
   font-family:'Cinzel',serif; font-size:clamp(28px,7vw,44px); 
-  background:linear-gradient(135deg,var(--charcoal) 0%,var(--gold-deep) 100%);
+  background:linear-gradient(135deg,var(--charcoal) 0%,var(--gold-deep) 100%); font-weight:600;
   -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
   line-height:1; display:block; min-width:52px;
 }
 .countdown-label {
   font-family:'Cinzel',serif; font-size:7.5px; letter-spacing:3px;
-  text-transform:uppercase; color:var(--gold); margin-top:8px; display:block;
+  text-transform:uppercase; color:var(--gold-deep); margin-top:8px; display:block;
 }
 .countdown-sep {
   font-family:'Cormorant Garamond',serif; font-size:36px; color:var(--gold);
@@ -621,8 +621,8 @@ section {
 }
 .countdown-tagline {
   font-family:'Great Vibes',cursive;
-  font-size:clamp(26px,7vw,40px);
-  color:var(--gold);
+  font-size:clamp(26px,7vw,40px); 
+  color:var(--gold-deep);
 
   opacity:1;
 
