@@ -391,12 +391,31 @@ section {
 /* ─── DETAILS CARDS ─── */
 .details-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:38px; }
 @media(max-width:480px){ .details-grid{ grid-template-columns:1fr; } .details-card.full{ grid-column:1; } }
-.details-card {
-  background:var(--white); border:1px solid rgba(200,169,107,0.3);
-  border-radius:10px; padding:30px 18px;
-  text-align:center; position:relative; overflow:hidden;
-  box-shadow:0 4px 20px rgba(200,169,107,0.08),0 1px 4px rgba(0,0,0,0.03);
-  transition:transform 0.3s ease,box-shadow 0.3s ease;
+.details-card{
+  background:rgba(255,255,255,0.88);
+
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
+
+  border:1px solid rgba(200,169,107,0.25);
+
+  border-radius:10px;
+
+  padding:30px 18px;
+
+  text-align:center;
+
+  position:relative;
+
+  overflow:hidden;
+
+  box-shadow:
+  0 4px 20px rgba(200,169,107,0.10),
+  0 1px 4px rgba(0,0,0,0.03);
+
+  transition:
+  transform 0.3s ease,
+  box-shadow 0.3s ease;
 }
 .details-card:active { transform:translateY(-2px); box-shadow:0 10px 36px rgba(200,169,107,0.16); }
 .details-card::before {
@@ -419,7 +438,7 @@ section {
 }
 
 /* ====================================
-   DETAILS SECTION IMAGE
+   WEDDING DETAILS BACKGROUND
 ==================================== */
 
 #details{
@@ -427,48 +446,42 @@ section {
     overflow:hidden;
 }
 
-/* Background Image */
+/* Background image layer */
 
-.details-bg-image{
+#details::before{
+    content:'';
 
     position:absolute;
-
     inset:0;
 
-    background:
-    url('details-bg.jpeg')
-    center center /
-    contain
-    no-repeat;
+    background:url('details-bg.jpeg') center center / cover no-repeat;
 
-    opacity:0.08;
+    opacity:0.50;
 
-    pointer-events:none;
+    transform:scale(1.30);
 
     z-index:0;
 }
 
-/* Content above image */
+/* Soft white overlay */
 
-.details-content{
+#details::after{
+    content:'';
+
+    position:absolute;
+    inset:0;
+
+    background:rgba(255,255,255,0.72);
+
+    z-index:0;
+}
+
+/* Keep all content above image */
+
+#details > *{
     position:relative;
-    z-index:2;
+    z-index:1;
 }
-
-/* Mobile */
-
-@media (max-width:768px){
-
-    .details-bg-image{
-
-        background-size:180px;
-
-        opacity:0.06;
-    }
-
-}
-
-
 
 /* ─── PHOTOS SECTION ─── */
 .photos-section {
