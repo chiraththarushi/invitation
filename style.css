@@ -582,7 +582,7 @@ section {
   border-top:1px solid rgba(200,169,107,0.14);
   border-bottom:1px solid rgba(200,169,107,0.14);
 }
-.countdown-bg { position:absolute; inset:0; background: rgba(255,255,255,0.5); z-index:0; }
+.countdown-bg { position:absolute; inset:0; background: rgba(255,255,255,0.3); z-index:0; }
 .countdown-bg-img {
   position:absolute; inset:0; z-index:0;
   background:url('clock.jpeg') center/cover no-repeat;
