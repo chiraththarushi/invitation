@@ -1089,4 +1089,40 @@ section {
         max-width:280px;
     }
 
+/* ── TOP & BOTTOM ORNAMENTS ── */
+.top-ornament {
+  width: 100%;
+  text-align: center;
+  display: block;
+  pointer-events: none;
+  margin-bottom: -20px;
+}
+
+.top-ornament img {
+  width: min(320px, 80vw);
+  height: auto;
+  display: inline-block;
+  opacity: 0.75;
+}
+
+.bottom-ornament {
+  width: 100%;
+  text-align: center;
+  display: block;
+  pointer-events: none;
+  margin-top: -20px;
+}
+
+.bottom-ornament img {
+  width: min(320px, 80vw);
+  height: auto;
+  display: inline-block;
+  opacity: 0.75;
+}
+
+@media (max-width: 480px) {
+  .top-ornament img,
+  .bottom-ornament img {
+    width: min(260px, 88vw);
+  }
 }
