@@ -454,34 +454,36 @@ function createFloatingHeart(){
     document.createElement('div');
 
     heart.className =
-    'heart-float';
+    'floating-heart';
 
-    heart.innerHTML = '♡';
+    heart.innerHTML =
+    '♥';
 
     heart.style.left =
     (Math.random() * 90 + 5) + 'vw';
 
     heart.style.top =
-    (window.innerHeight + 50) + 'px';
+    (window.innerHeight + 40) + 'px';
 
     heart.style.fontSize =
-    (14 + Math.random()*12) + 'px';
+    (14 + Math.random() * 10) + 'px';
 
     document.body.appendChild(
         heart
     );
 
-    setTimeout(()=>{
+    setTimeout(() => {
+
         heart.remove();
-    },12000);
+
+    },10000);
+
 }
 
-setInterval(()=>{
+/* Create one heart every 3 seconds */
 
-    if(document.getElementById('main-content')
-       .classList.contains('visible')){
+setInterval(() => {
 
-        createFloatingHeart();
-    }
+    createFloatingHeart();
 
-},2500);
+},3000);
