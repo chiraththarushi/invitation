@@ -307,14 +307,14 @@ body {
 /* Section eyebrows — base */
 .section-eyebrow {
   font-family:'Cinzel',serif;
-  font-size:clamp(10px,2vw,10px);
+  font-size:clamp(8px,2vw,10px);
   letter-spacing:5px; text-transform:uppercase;
   color:var(--gold-deep); display:block; margin-bottom:10px;
 }
 
 /* Slightly bigger eyebrow variant (used on key sections) */
 .section-eyebrow-lg {
-  font-size:clamp(15px,3vw,20px); font-weight:100;
+  font-size:clamp(15px,3vw,13px);
   letter-spacing:4px;
 }
 
@@ -430,7 +430,7 @@ section {
 }
 .card-value {
   font-family:'Cormorant Garamond',serif;
-  font-size:clamp(18px,4.5vw,22px); font-weight:600; color:var(--charcoal); line-height:1.25;
+  font-size:clamp(18px,4.5vw,22px); color:var(--charcoal); line-height:1.25;
 }
 .card-sub {
   font-family:'Cormorant Garamond',serif; font-style:italic;
@@ -591,7 +591,7 @@ section {
 .countdown-inner { position:relative; z-index:1; }
 .countdown-romantic {
   font-family:'Cormorant Garamond',serif; font-style:italic;
-  font-size:clamp(14px,3.8vw,19px); font-weight:600; color:var(--charcoal-light); margin-top:8px; line-height:1.65;
+  font-size:clamp(14px,3.8vw,19px); color:var(--charcoal-light); margin-top:8px; line-height:1.65;
 }
 .countdown-grid {
   display:flex; justify-content:center; gap:12px; margin-top:38px; flex-wrap:wrap;
@@ -606,7 +606,7 @@ section {
   background:linear-gradient(135deg,rgba(200,169,107,0.04) 0%,transparent 30%);
 }
 .countdown-number {
-  font-family:'Cinzel',serif; font-size:clamp(28px,7vw,44px); font-weight:600;
+  font-family:'Cinzel',serif; font-size:clamp(28px,7vw,44px); 
   background:linear-gradient(135deg,var(--charcoal) 0%,var(--gold-deep) 100%);
   -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
   line-height:1; display:block; min-width:52px;
