@@ -586,12 +586,12 @@ section {
 .countdown-bg-img {
   position:absolute; inset:0; z-index:0;
   background:url('clock.jpeg') center/cover no-repeat;
-  opacity:0.5; filter:blur(1px);
+  opacity:0.45; filter:blur(1px);
 }
 .countdown-inner { position:relative; z-index:1; }
 .countdown-romantic {
   font-family:'Cormorant Garamond',serif; font-style:italic;
-  font-size:clamp(14px,3.8vw,19px); color:var(--charcoal-light); margin-top:8px; line-height:1.65;
+  font-size:clamp(14px,3.8vw,19px); font-weight:600; color:var(--charcoal-light); margin-top:8px; line-height:1.65;
 }
 .countdown-grid {
   display:flex; justify-content:center; gap:12px; margin-top:38px; flex-wrap:wrap;
@@ -620,8 +620,17 @@ section {
   align-self:flex-start; margin-top:18px; opacity:0.5; line-height:1;
 }
 .countdown-tagline {
-  font-family:'Great Vibes',cursive; font-size:clamp(26px,7vw,40px);
-  color:var(--gold); margin-top:28px; display:block; opacity:0.8;
+  font-family:'Great Vibes',cursive;
+  font-size:clamp(26px,7vw,40px);
+  color:var(--gold);
+
+  opacity:1;
+
+  text-shadow:
+    0 0 1px rgba(0,0,0,0.15);
+
+  margin-top:28px;
+  display:block;
 }
 
 /* ─── VENUE ─── */
