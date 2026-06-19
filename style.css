@@ -300,14 +300,14 @@ body {
 .hero-eyebrow {
   font-family:'Cinzel',serif;
   font-size:clamp(112px,3vw,14px);
-  letter-spacing:5px; color:var(--gold);
-  text-transform:uppercase; margin-bottom:18px; opacity:0.95;
+  letter-spacing:5px; color:var(--gold-deep);
+  text-transform:uppercase; margin-bottom:18px; opacity:1;
 }
 
 /* Section eyebrows — base */
 .section-eyebrow {
   font-family:'Cinzel',serif;
-  font-size:clamp(8px,2vw,10px);
+  font-size:clamp(30px,10vw,100px);
   letter-spacing:5px; text-transform:uppercase; font-weight:600;
   color:var(--gold-deep); display:block; margin-bottom:10px;
 }
