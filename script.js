@@ -444,3 +444,61 @@ document.addEventListener('touchmove', e => {
 
 });
 
+/* ==========================
+   GOLD HEART EFFECT
+========================== */
+
+function createGoldHeart(x,y){
+
+  const heart = document.createElement('div');
+
+  heart.className = 'gold-heart';
+
+  heart.innerHTML = '♡';
+
+  heart.style.left = x + 'px';
+
+  heart.style.top = y + 'px';
+
+  heart.style.fontSize =
+    (10 + Math.random()*8) + 'px';
+
+  document.body.appendChild(heart);
+
+  setTimeout(()=>{
+    heart.remove();
+  },2500);
+
+}
+
+/* Desktop */
+
+document.addEventListener('mousemove', e => {
+
+  if(Math.random() > 0.95){
+
+    createGoldHeart(
+      e.clientX,
+      e.clientY
+    );
+
+  }
+
+});
+
+/* Mobile */
+
+document.addEventListener('touchmove', e => {
+
+  const touch = e.touches[0];
+
+  if(Math.random() > 0.92){
+
+    createGoldHeart(
+      touch.clientX,
+      touch.clientY
+    );
+
+  }
+
+},{passive:true});
