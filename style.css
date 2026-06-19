@@ -308,7 +308,7 @@ body {
 .section-eyebrow {
   font-family:'Cinzel',serif;
   font-size:clamp(10px,2vw,10px);
-  letter-spacing:5px; text-transform:uppercase; font-weight:100;
+  letter-spacing:5px; text-transform:uppercase;
   color:var(--gold-deep); display:block; margin-bottom:10px;
 }
 
