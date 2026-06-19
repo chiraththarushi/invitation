@@ -442,51 +442,57 @@ document.addEventListener('touchmove', e => {
 
   }
 
+/* ====================================
+   FLOATING LUXURY HEARTS
+==================================== */
+
 function createFloatingHeart(){
 
-    const heart =
-    document.createElement('div');
+    const heart = document.createElement("div");
 
-    heart.className =
-    'floating-heart';
+    heart.classList.add("floating-heart");
 
     heart.innerHTML =
-    Math.random() > 0.5 ? '♡' : '♥';
+        Math.random() > 0.5 ? "♥" : "♡";
 
     heart.style.left =
-    Math.random() * 100 + 'vw';
-
-    heart.style.setProperty(
-      '--drift',
-      (Math.random()*200 - 100) + 'px'
-    );
+        Math.random() * window.innerWidth + "px";
 
     heart.style.fontSize =
-    (14 + Math.random()*10) + 'px';
+        (12 + Math.random()*14) + "px";
+
+    heart.style.color =
+        Math.random() > 0.5
+        ? "#D4AF37"
+        : "#E6C8A0";
+
+    heart.style.textShadow =
+        "0 0 10px rgba(212,175,55,.25)";
+
+    heart.style.setProperty(
+        "--drift",
+        (Math.random()*180 - 90) + "px"
+    );
 
     heart.style.animationDuration =
-    (8 + Math.random()*5) + 's';
+        (12 + Math.random()*8) + "s";
 
     document.body.appendChild(heart);
 
     setTimeout(()=>{
         heart.remove();
-    },13000);
+    },20000);
 }
 
-/* Create only a few hearts */
+/* Create hearts */
 
-setInterval(()=>{
+setInterval(() => {
 
-    if(document.hidden) return;
-
-    if(Math.random() > 0.45){
-
+    if(document.visibilityState === "visible"){
         createFloatingHeart();
-
     }
 
-},2200);
+},2500);
    
 });
 
